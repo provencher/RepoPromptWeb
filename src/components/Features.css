@@ -1,0 +1,25 @@
+.features {
+  background-color: #ffffff;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature-item {
+  flex-basis: calc(50% - 2rem);
+  max-width: 400px;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .feature-item {
+    flex-basis: 100%;
+  }
+}
