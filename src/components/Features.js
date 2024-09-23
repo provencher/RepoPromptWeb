@@ -70,13 +70,12 @@ function Features({ theme }) {
       title: 'Compose',
       description: [
         'Select files and folders that will be a part of your prompt\'s context',
-        'Accelerate your workflow with saved promp\'s, defining reuseable concepts for the LLM to follow',
+        'Accelerate your workflow with saved prompts, defining reusable concepts for the LLM to follow',
         'Preview files by clicking them and estimate token usage',
-        'Copy your constucted prompt to the clipbaord for external use or start an AI chat session',
+        'Copy your constructed prompt to the clipboard for external use or start an AI chat session',
       ],
       imgSrc: `/images/compose-${theme}.png`,
       alt: 'Compose view: intuitive file selection, instruction composition, and change preview',
-      align: 'left',
     },
     {
       title: 'Chat',
@@ -88,7 +87,6 @@ function Features({ theme }) {
       ],
       imgSrc: `/images/chat-${theme}.png`,
       alt: 'Chat view: interactive AI conversation and streamlined change review process',
-      align: 'right',
     },
     {
       title: 'Review',
@@ -100,9 +98,9 @@ function Features({ theme }) {
       ],
       imgSrc: `/images/review-${theme}.png`,
       alt: 'Review view: comprehensive change analysis and flexible acceptance options',
-      align: 'left',
     },
-   ];
+  ];
+
   return (
     <section id="features" className="features">
       <div className="features-container">
@@ -112,55 +110,39 @@ function Features({ theme }) {
               className="feature-item"
               ref={(el) => (featureRefs.current[index] = el)}
             >
-              {index % 2 === 0 ? (
-                <>
-                  <div className="feature-content">
-  <h3>{feature.title}</h3>
-  <ul>
-    {feature.description.map((item, i) => (
-      <li key={i}>{item}</li>
-    ))}
-  </ul>
-</div>
-                  <div className="feature-image-container">
-                    <img
-                      src={feature.imgSrc}
-                      alt={feature.alt}
-                      className="feature-image"
-                      onClick={() => handleImageClick(feature.imgSrc)}
-                    />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="feature-image-container">
-                    <img
-                      src={feature.imgSrc}
-                      alt={feature.alt}
-                      className="feature-image"
-                      onClick={() => handleImageClick(feature.imgSrc)} // Added onClick for consistency
-                    />
-                  </div>
-                  <div className="feature-content">
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
-                </>
-              )}
+              <div className="feature-content">
+                <h3>{feature.title}</h3>
+                <ul>
+                  {feature.description.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="feature-image-container">
+                <img
+                  src={feature.imgSrc}
+                  alt={feature.alt}
+                  className="feature-image"
+                  onClick={() => handleImageClick(feature.imgSrc)}
+                />
+              </div>
             </div>
             <div className="arrow-container">
-            {index < features.length - 1 ? (
-              <Arrow onClick={() => scrollToRef(index + 1)} />
-            ) : (
-              <LoopArrow onClick={() => scrollToRef(0)} />
-            )}
-          </div>
+              {index < features.length - 1 ? (
+                <Arrow onClick={() => scrollToRef(index + 1)} />
+              ) : (
+                <LoopArrow onClick={() => scrollToRef(0)} />
+              )}
+            </div>
           </div>
         ))}
       </div>
       {expandedImage && (
         <div className="expanded-image-overlay" onClick={closeExpandedImage}>
-          <img src={expandedImage} alt="Expanded view" className="expanded-image" />
+          <div className="expanded-image-container">
+            <img src={expandedImage} alt="Expanded view" className="expanded-image" />
+            <button className="close-button" onClick={closeExpandedImage}>×</button>
+          </div>
         </div>
       )}
     </section>
