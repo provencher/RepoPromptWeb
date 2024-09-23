@@ -7,20 +7,20 @@ function Features() {
       <h2>Key Features</h2>
       <div className="feature-list">
         <div className="feature-item">
-          <h3>File Access and Import</h3>
-          <p>Easily access files and import them into the clipboard using PromptViewModel.swift.</p>
+          <h3>Smart File Selection</h3>
+          <p>Easily select folders and files for AI interaction.</p>
         </div>
         <div className="feature-item">
-          <h3>AI-Powered Diff Extraction</h3>
-          <p>Send files to various AI providers using AIQueryService.swift to extract and apply changes (diffs).</p>
+          <h3>Prompt Composition</h3>
+          <p>Craft instructions with saved prompts and preview token usage.</p>
         </div>
         <div className="feature-item">
-          <h3>Compose Mode</h3>
-          <p>Draft prompts with saved options and check token usage for selected files.</p>
+          <h3>AI-Powered Chat</h3>
+          <p>Engage in meaningful conversations to refine code changes.</p>
         </div>
         <div className="feature-item">
-          <h3>Chat Mode</h3>
-          <p>Manage conversations with AI for extracting and applying diffs efficiently.</p>
+          <h3>Seamless Review Process</h3>
+          <p>Examine and accept changes with an intuitive interface.</p>
         </div>
       </div>
     </section>

@@ -5,8 +5,8 @@ function Hero() {
   return (
     <section className="hero">
       <h1>Repo Prompt</h1>
-      <p>A powerful Swift macOS application for seamless file management and AI-assisted code changes. Take a visual tour to see how it works!</p>
-      <a href="https://testflight.apple.com/join/your-testflight-link" target="_blank" rel="noopener noreferrer" className="cta-button">Try it on TestFlight</a>
+      <p>Transform your code with AI-powered assistance. Compose prompts, chat with AI, and review changes seamlessly.</p>
+      <a href="#how-it-works" className="cta-button">See How It Works</a>
     </section>
   );
 }

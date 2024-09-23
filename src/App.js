@@ -40,8 +40,8 @@ function App() {
     <div className="App">
       <Toolbar />
       <Hero />
-      <Features />
       <HowItWorks />
+      <Features />
       <Screenshots theme={theme} />
       <Footer />
     </div>

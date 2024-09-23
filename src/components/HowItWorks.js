@@ -7,20 +7,16 @@ function HowItWorks() {
       <h2>How It Works</h2>
       <div className="steps">
         <div className="step">
-          <h3>1. Compose Mode</h3>
-          <p>Use InstructionsView.swift to draft prompts with saved options. PromptViewModel.swift helps you select files and check token usage.</p>
+          <h3>1. Compose</h3>
+          <p>Select files, compose instructions, and leverage saved prompts. Preview files and review token usage before proceeding.</p>
         </div>
         <div className="step">
-          <h3>2. File Processing</h3>
-          <p>Access and import files into the clipboard or send them to AI providers using AIQueryService.swift.</p>
+          <h3>2. Chat</h3>
+          <p>Interact with the selected AI model to generate and refine code changes. Review and merge changes after each message.</p>
         </div>
         <div className="step">
-          <h3>3. AI Interaction</h3>
-          <p>Extract changes (diffs) from AI providers and incorporate them back into your project.</p>
-        </div>
-        <div className="step">
-          <h3>4. Chat Mode</h3>
-          <p>Manage ongoing conversations with AI to refine and apply changes to your codebase.</p>
+          <h3>3. Review</h3>
+          <p>Examine generated changes, accept modifications individually or all at once, and save everything to your disk.</p>
         </div>
       </div>
     </section>
