@@ -1,10 +1,10 @@
-/* File: src/components/Features.css */
-
 .features {
   background-color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 4rem 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+ 
+  margin: 0 auto; /* Center the section on large screens */
 }
 
 body.dark .features {
@@ -16,35 +16,27 @@ body.dark .features {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem; /* Reduce the gap between feature items for a tighter layout */
 }
 
 .feature-item {
-    width: 100%;
-    max-width: 1200px;
-    padding: 3rem;
-    font-size: 18px;
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1400px; /* Reduce the max-width for better alignment */
+  padding: 2rem; /* Reduce padding to make the sections more compact */
+  font-size: 18px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 3rem;
 }
 
 .feature-content {
   flex: 1;
-  padding: 0 2rem;
+  padding: 1rem 2rem; /* Reduce padding inside the content */
   width: 40%;
-}
-
-.feature-content.left {
-  text-align: left;
-}
-
-.feature-content.right {
-  text-align: right;
 }
 
 .feature-content ul {
@@ -65,77 +57,81 @@ body.dark .features {
   margin-left: -1em;
 }
 
-.feature-content.right li::before {
-  margin-left: 0;
-  margin-right: 0.5em;
-}
 .feature-image-container {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%; /* Adjust image container width */
 }
 
 .feature-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Reverse layout for even items */
 .feature-item:nth-child(even) {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .feature-item:nth-child(even) .feature-content {
-    padding: 0 2rem 0 0;
+  padding: 1rem 2rem;
 }
 
 .feature-item:nth-child(even) .feature-image-container {
-    padding: 0 0 0 2rem;
+  padding: 0;
 }
+
 @media (max-width: 1024px) {
-    .feature-item,
-    .feature-item:nth-child(even) {
-        flex-direction: column;
-        padding: 2rem;
-    }
+  .feature-item,
+  .feature-item:nth-child(even) {
+    flex-direction: column;
+    padding: 2rem 1rem; /* Adjust padding for mobile views */
+  }
 
-    .feature-content,
-    .feature-image-container {
-        width: 100%;
-        padding: 1rem 0;
-    }
-
-    .feature-item h3 {
-        font-size: 1.8rem;
-    }
-
-    .feature-item p {
-        font-size: 1rem;
-    }
-
-    .feature-item:nth-child(even) .feature-content,
-    .feature-item:nth-child(even) .feature-image-container {
-        padding: 1rem 0;
-    }
-}
-.expanded-image-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+  .feature-content,
+  .feature-image-container {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    padding: 0;
+  }
+
+  .feature-item h3 {
+    font-size: 1.8rem;
+  }
+
+  .feature-item p {
+    font-size: 1rem;
+  }
+
+  .feature-item:nth-child(even) .feature-content,
+  .feature-item:nth-child(even) .feature-image-container {
+    padding: 0;
+  }
 }
-.expanded-image {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+
+@media (max-width: 768px) {
+  .feature-item {
+    margin-bottom: 2rem;
+  }
+
+  .feature-image-container {
+    padding: 1rem;
+  }
+
+  .feature-content {
+    padding: 0;
+    text-align: center; /* Center-align text for smaller screens */
+  }
+
+  .feature-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .feature-item ul {
+    padding: 0;
+    font-size: 0.9rem; /* Adjust font size for mobile */
+  }
 }
