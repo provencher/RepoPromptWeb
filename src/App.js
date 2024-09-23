@@ -1,3 +1,5 @@
+// File: src/App.js
+
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Toolbar from './components/Toolbar';

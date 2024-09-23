@@ -1,3 +1,5 @@
+/* File: src/components/Features.css */
+
 .features {
   background-color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -14,143 +16,93 @@ body.dark .feature-item {
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-.feature-list {
+.features-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
 }
 
 .feature-item {
-  flex-basis: calc(33.333% - 2rem);
-  max-width: 400px;
-  padding: 1.5rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.feature-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.feature-item img {
   width: 100%;
+  max-width: 800px;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.feature-item h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-image {
+  width: 100%;
+  max-width: 600px;
   height: auto;
   border-radius: 8px;
-  margin-top: 1rem;
+  cursor: pointer;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
-.feature-item img:hover {
-  transform: scale(1.05);
-}
-
-/* Modal Styles */
-.modal {
+.arrow-container {
   display: flex;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-  align-items: center;
   justify-content: center;
+  margin: 2rem 0;
 }
 
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-}
-
-.caption {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #fff;
-  padding: 1rem 0;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: color 0.3s ease;
+.arrow, .loop-arrow {
+  width: 60px;
+  height: 60px;
+  color: #007bff;
+  transition: transform 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+.arrow:hover, .loop-arrow:hover {
+  transform: scale(1.2);
+  color: #0056b3;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
   .feature-item {
-    flex-basis: 100%;
+    max-width: 90%;
   }
 }
 
-/* Modal Styles */
-.modal {
-  display: block; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
+@media (max-width: 768px) {
+  .feature-item {
+    padding: 2rem;
+  }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 8px;
-}
+  .feature-item h3 {
+    font-size: 1.8rem;
+  }
 
-.caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  padding: 1rem 0;
-  color: #ccc;
+  .feature-item p {
+    font-size: 1rem;
+  }
 }
+@media (max-width: 768px) {
+  .feature-item {
+    max-width: 100%;
+  }
 
-.close {
-  position: absolute;
-  top: 30px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
+  .arrow {
+    display: none; /* Hide arrows on very small screens */
+  }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+  .loop-arrow-container {
+    margin-top: 2rem;
+  }
 }
