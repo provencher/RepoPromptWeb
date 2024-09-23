@@ -7,8 +7,32 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #ffffff;
+  color: #333333;
 }
 
+/* Dark theme */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Dark mode specific styles */
+body.dark .toolbar {
+  background-color: #333333;
+}
+
+body.dark .hero {
+  background-color: #333333;
+}
+
+body.dark .cta-button {
+  background-color: #0056b3;
+}
+
+body.dark .cta-button:hover {
+  background-color: #003d7e;
+}
 .App {
   text-align: center;
 }
