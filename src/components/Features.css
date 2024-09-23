@@ -3,8 +3,8 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 4rem 2rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
- 
   margin: 0 auto; /* Center the section on large screens */
+  padding-inline: 5vw; /* Ensure equal padding on both left and right */
 }
 
 body.dark .features {
@@ -16,13 +16,16 @@ body.dark .features {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem; /* Reduce the gap between feature items for a tighter layout */
+  gap: 3rem;
+  max-width: 1200px; /* Center the content within a max width */
+  width: 100%; /* Ensure the container is responsive */
+  margin: 0 auto; /* Center container within section */
 }
 
 .feature-item {
   width: 100%;
-  max-width: 1400px; /* Reduce the max-width for better alignment */
-  padding: 2rem; /* Reduce padding to make the sections more compact */
+  max-width: 1400px;
+  padding: 2rem;
   font-size: 18px;
   background-color: #f8f9fa;
   border-radius: 12px;
@@ -35,7 +38,7 @@ body.dark .features {
 
 .feature-content {
   flex: 1;
-  padding: 1rem 2rem; /* Reduce padding inside the content */
+  padding: 1rem 2rem;
   width: 40%;
 }
 
@@ -62,7 +65,7 @@ body.dark .features {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%; /* Adjust image container width */
+  width: 60%;
 }
 
 .feature-image {
@@ -89,13 +92,13 @@ body.dark .features {
   .feature-item,
   .feature-item:nth-child(even) {
     flex-direction: column;
-    padding: 2rem 1rem; /* Adjust padding for mobile views */
+    padding: 2rem 1rem;
   }
 
   .feature-content,
   .feature-image-container {
     width: 100%;
-    padding: 0;
+    padding: 32;
   }
 
   .feature-item h3 {
@@ -123,7 +126,7 @@ body.dark .features {
 
   .feature-content {
     padding: 0;
-    text-align: center; /* Center-align text for smaller screens */
+    text-align: center;
   }
 
   .feature-item h3 {
@@ -132,6 +135,6 @@ body.dark .features {
 
   .feature-item ul {
     padding: 0;
-    font-size: 0.9rem; /* Adjust font size for mobile */
+    font-size: 0.9rem;
   }
 }

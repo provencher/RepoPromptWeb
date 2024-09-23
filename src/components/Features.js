@@ -66,43 +66,43 @@ function Features({ theme }) {
   };
 
   const features = [
-  {
-    title: 'Compose',
-    description: [
-      'Select folder and files for AI interaction',
-      'Craft instructions using saved prompts',
-      'Preview files and estimate token usage',
-      'Copy prompt for external use or start chat',
-    ],
-    imgSrc: `/images/compose-${theme}.png`,
-    alt: 'Compose view showcasing folder selection, instruction composition, and file preview',
-    align: 'left',
-  },
-  {
-    title: 'Chat',
-    description: [
-      'AI reviews prompt and generates instructions',
-      'Engage in real-time dialogue with AI',
-      'Click merge to review proposed changes',
-      'Refine AI approach iteratively',
-    ],
-    imgSrc: `/images/chat-${theme}.png`,
-    alt: 'Chat view displaying AI interaction and change review process',
-    align: 'right',
-  },
-  {
-    title: 'Review',
-    description: [
-      'See all created, modified, and deleted files',
-      'Accept changes individually or all at once',
-      'Save approved modifications to disk',
-      'Return to chat or start fresh in compose',
-    ],
-    imgSrc: `/images/review-${theme}.png`,
-    alt: 'Review view showing detailed change analysis and acceptance options',
-    align: 'left',
-  },
-];
+    {
+      title: 'Compose',
+      description: [
+        'Select files and folders that will be a part of your prompt\'s context',
+        'Accelerate your workflow with saved promp\'s, defining reuseable concepts for the LLM to follow',
+        'Preview files by clicking them and estimate token usage',
+        'Copy your constucted prompt to the clipbaord for external use or start an AI chat session',
+      ],
+      imgSrc: `/images/compose-${theme}.png`,
+      alt: 'Compose view: intuitive file selection, instruction composition, and change preview',
+      align: 'left',
+    },
+    {
+      title: 'Chat',
+      description: [
+        'Using your own API-keys for OpenAI or Anthropic, begin a chat that will allow the LLM to interact with your files directly',
+        'Talk to the AI about your files, or let it modify them by creating diffs for files even thousands of lines long',
+        'Click merge to review and accept proposed changes',
+        'Your updated files will be sent to the AI automatically in the next message to further iterate and make new diffs',
+      ],
+      imgSrc: `/images/chat-${theme}.png`,
+      alt: 'Chat view: interactive AI conversation and streamlined change review process',
+      align: 'right',
+    },
+    {
+      title: 'Review',
+      description: [
+        'Analyze all created, modified, and deleted files in detail',
+        'Accept changes individually or in bulk with a single click',
+        'Save approved modifications directly to your local disk',
+        'Return to chat for further iterations or start fresh in compose',
+      ],
+      imgSrc: `/images/review-${theme}.png`,
+      alt: 'Review view: comprehensive change analysis and flexible acceptance options',
+      align: 'left',
+    },
+   ];
   return (
     <section id="features" className="features">
       <div className="features-container">
