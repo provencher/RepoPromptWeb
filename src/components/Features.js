@@ -1,6 +1,6 @@
 // File: src/components/Features.js
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './Features.css';
 
 // SVG Arrow Component
@@ -46,6 +46,15 @@ const LoopArrow = ({ onClick }) => (
 function Features({ theme }) {
   // Create refs for each feature
   const featureRefs = useRef([]);
+  const [expandedImage, setExpandedImage] = useState(null);
+
+  const handleImageClick = (imgSrc) => {
+    setExpandedImage(imgSrc);
+  };
+
+  const closeExpandedImage = () => {
+    setExpandedImage(null);
+  };
 
   const features = [
     {
@@ -78,7 +87,6 @@ function Features({ theme }) {
 
   return (
     <section id="features" className="features">
-      <h2>How It Works</h2>
       <div className="features-container">
         {features.map((feature, index) => (
           <div key={index}>
@@ -97,6 +105,7 @@ function Features({ theme }) {
                       src={feature.imgSrc}
                       alt={feature.alt}
                       className="feature-image"
+                      onClick={() => handleImageClick(feature.imgSrc)}
                     />
                   </div>
                 </>
@@ -107,6 +116,7 @@ function Features({ theme }) {
                       src={feature.imgSrc}
                       alt={feature.alt}
                       className="feature-image"
+                      onClick={() => handleImageClick(feature.imgSrc)} // Added onClick for consistency
                     />
                   </div>
                   <div className="feature-content">
@@ -126,6 +136,11 @@ function Features({ theme }) {
           </div>
         ))}
       </div>
+      {expandedImage && (
+        <div className="expanded-image-overlay" onClick={closeExpandedImage}>
+          <img src={expandedImage} alt="Expanded view" className="expanded-image" />
+        </div>
+      )}
     </section>
   );
 }
