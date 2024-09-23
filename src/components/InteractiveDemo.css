@@ -1,0 +1,128 @@
+/* src/components/InteractiveDemo.css */
+
+.interactive-demo {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+}
+
+.demo-container {
+  display: flex;
+  height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  width: 25%;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.editor {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.editor h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.editor textarea {
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 10px;
+  font-family: 'Fira Code', monospace;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
+
+.selected-files {
+  height: 200px;
+  border-top: 1px solid #ccc;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.selected-files h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.file-list {
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.file-card {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.file-card h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.file-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.demo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.token-usage {
+  font-size: 1rem;
+  color: #333;
+}
+
+.ai-chat-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ai-chat-button:hover {
+  background-color: #0056b3;
+}
