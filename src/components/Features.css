@@ -4,6 +4,7 @@
   background-color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 4rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 body.dark .features {
@@ -11,48 +12,59 @@ body.dark .features {
   color: #ffffff;
 }
 
-body.dark .feature-item {
-  background-color: #262626;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
 .features-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  position: relative;
 }
 
 .feature-item {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   padding: 3rem;
   background-color: #f8f9fa;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  display: flex;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+}
+
+body.dark .feature-item {
+  background-color: #262626;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.feature-content {
+  flex: 1;
+  padding: 0 2rem;
 }
 
 .feature-item h3 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .feature-item p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.feature-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .feature-image {
-  width: 100%;
-  max-width: 600px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .arrow-container {
@@ -74,15 +86,16 @@ body.dark .feature-item {
   color: #0056b3;
 }
 
+/* Responsive design */
 @media (max-width: 1024px) {
   .feature-item {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .feature-item {
+    flex-direction: column;
     padding: 2rem;
+  }
+
+  .feature-content, .feature-image-container {
+    width: 100%;
+    padding: 1rem 0;
   }
 
   .feature-item h3 {
@@ -93,16 +106,14 @@ body.dark .feature-item {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 768px) {
-  .feature-item {
-    max-width: 100%;
+  .features {
+    padding: 2rem 1rem;
   }
 
-  .arrow {
-    display: none; /* Hide arrows on very small screens */
-  }
-
-  .loop-arrow-container {
-    margin-top: 2rem;
+  .arrow, .loop-arrow {
+    width: 40px;
+    height: 40px;
   }
 }

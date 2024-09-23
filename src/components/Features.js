@@ -1,6 +1,6 @@
 // File: src/components/Features.js
 
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import './Features.css';
 
 // SVG Arrow Component
@@ -44,8 +44,6 @@ const LoopArrow = ({ onClick }) => (
 );
 
 function Features({ theme }) {
-  const [modalImage, setModalImage] = useState(null);
-
   // Create refs for each feature
   const featureRefs = useRef([]);
 
@@ -73,14 +71,6 @@ function Features({ theme }) {
     },
   ];
 
-  const openModal = (imgSrc, alt) => {
-    setModalImage({ src: imgSrc, alt });
-  };
-
-  const closeModal = () => {
-    setModalImage(null);
-  };
-
   // Function to scroll to a specific ref
   const scrollToRef = (index) => {
     featureRefs.current[index].scrollIntoView({ behavior: 'smooth' });
@@ -92,15 +82,39 @@ function Features({ theme }) {
       <div className="features-container">
         {features.map((feature, index) => (
           <div key={index}>
-            <div className="feature-item" ref={(el) => (featureRefs.current[index] = el)}>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-              <img
-                src={feature.imgSrc}
-                alt={feature.alt}
-                className="feature-image"
-                onClick={() => openModal(feature.imgSrc, feature.alt)}
-              />
+            <div
+              className="feature-item"
+              ref={(el) => (featureRefs.current[index] = el)}
+            >
+              {index % 2 === 0 ? (
+                <>
+                  <div className="feature-content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                  <div className="feature-image-container">
+                    <img
+                      src={feature.imgSrc}
+                      alt={feature.alt}
+                      className="feature-image"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="feature-image-container">
+                    <img
+                      src={feature.imgSrc}
+                      alt={feature.alt}
+                      className="feature-image"
+                    />
+                  </div>
+                  <div className="feature-content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </div>
+                </>
+              )}
             </div>
             <div className="arrow-container">
               {index < features.length - 1 ? (
@@ -112,14 +126,6 @@ function Features({ theme }) {
           </div>
         ))}
       </div>
-
-      {modalImage && (
-        <div className="modal" onClick={closeModal}>
-          <span className="close">&times;</span>
-          <img className="modal-content" src={modalImage.src} alt={modalImage.alt} />
-          <div className="caption">{modalImage.alt}</div>
-        </div>
-      )}
     </section>
   );
 }
