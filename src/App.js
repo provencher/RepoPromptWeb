@@ -3,8 +3,6 @@ import './App.css';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Screenshots from './components/Screenshots';
 import Footer from './components/Footer';
 
 function App() {
@@ -40,9 +38,7 @@ function App() {
     <div className="App">
       <Toolbar />
       <Hero />
-      <HowItWorks />
-      <Features />
-      <Screenshots theme={theme} />
+      <Features theme={theme} />
       <Footer />
     </div>
   );
