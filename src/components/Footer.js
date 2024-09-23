@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2023 Repo Prompt. All rights reserved.</p>
+      <p>&copy; 2024 Repo Prompt. All rights reserved.</p>
     </footer>
   );
 }
