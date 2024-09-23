@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Screenshots.css';
 
 function Screenshots({ theme }) {
   return (
-    <section id="screenshots" className={`screenshots ${theme}`}>
+    <section id="screenshots" className="screenshots">
       <h2>Visual Tour</h2>
       <p>Experience Repo Prompt in action. The app adapts to your system preferences for light and dark modes.</p>
       <div className="screenshot-grid">

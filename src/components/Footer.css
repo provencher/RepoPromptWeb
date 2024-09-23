@@ -3,4 +3,9 @@
   color: #ffffff;
   padding: 2rem;
   text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark .footer {
+  background-color: #1e1e1e;
 }

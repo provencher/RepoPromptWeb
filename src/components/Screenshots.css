@@ -1,8 +1,17 @@
 .screenshots {
   background-color: #f8f9fa;
   padding: 4rem 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .screenshots {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .screenshot-item img {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
 .screenshot-grid {
   display: flex;
   flex-wrap: wrap;

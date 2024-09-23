@@ -1,7 +1,17 @@
 .features {
   background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .features {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .feature-item {
+  background-color: #262626;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
 .feature-list {
   display: flex;
   flex-wrap: wrap;

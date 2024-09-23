@@ -1,7 +1,17 @@
 .how-it-works {
   background-color: #e9ecef;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .how-it-works {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+body.dark .step {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
 .steps {
   display: flex;
   flex-wrap: wrap;

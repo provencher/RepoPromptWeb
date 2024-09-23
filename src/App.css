@@ -19,19 +19,53 @@ body.dark {
 
 /* Dark mode specific styles */
 body.dark .toolbar {
-  background-color: #333333;
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 
 body.dark .hero {
-  background-color: #333333;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .features {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .how-it-works {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+body.dark .screenshots {
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 
 body.dark .cta-button {
-  background-color: #0056b3;
+  background-color: #0078d4;
+  color: #ffffff;
 }
 
 body.dark .cta-button:hover {
-  background-color: #003d7e;
+  background-color: #005a9e;
+}
+
+body.dark .feature-item,
+body.dark .step {
+  background-color: #262626;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark a {
+  color: #4db6ff;
+}
+
+body.dark .footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 .App {
   text-align: center;

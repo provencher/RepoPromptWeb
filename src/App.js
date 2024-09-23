@@ -14,24 +14,23 @@ function App() {
     // Detect system preference
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
+    // Function to update theme
+    const updateTheme = (isDark) => {
+      setTheme(isDark ? 'dark' : 'light');
+      document.body.classList.toggle('dark', isDark);
+    };
+
     // Set initial theme based on system preference
-    if (prefersDarkScheme.matches) {
-      setTheme('dark');
-      document.body.classList.add('dark');
-    } else {
-      setTheme('light');
-      document.body.classList.remove('dark');
-    }
+    updateTheme(prefersDarkScheme.matches);
 
     // Listen for changes to the system preference
     const themeChangeListener = (e) => {
-      const newTheme = e.matches ? 'dark' : 'light';
-      setTheme(newTheme);
-      document.body.classList.toggle('dark', e.matches);
+      updateTheme(e.matches);
     };
 
     prefersDarkScheme.addEventListener('change', themeChangeListener);
 
+    // Cleanup listener on unmount
     return () => {
       prefersDarkScheme.removeEventListener('change', themeChangeListener);
     };
@@ -48,4 +47,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

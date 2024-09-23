@@ -5,8 +5,29 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .toolbar {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .logo {
+  color: #4db6ff;
+}
+
+body.dark nav ul li a {
+  color: #ffffff;
+}
+
+body.dark .testflight-button {
+  background-color: #0078d4;
+}
+
+body.dark .testflight-button:hover {
+  background-color: #005a9e;
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;

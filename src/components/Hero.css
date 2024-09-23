@@ -1,8 +1,13 @@
 .hero {
   background-color: #e9ecef;
   padding: 6rem 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .hero {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
