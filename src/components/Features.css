@@ -34,13 +34,40 @@ body.dark .features {
 }
 
 .feature-content {
-    flex: 1;
-    padding: 0 2rem;
-    width: 25%;
+  flex: 1;
+  padding: 0 2rem;
+  width: 40%;
 }
-.feature-content h3 {
-    font-size: 24px;
-    margin-bottom: 1rem;
+
+.feature-content.left {
+  text-align: left;
+}
+
+.feature-content.right {
+  text-align: right;
+}
+
+.feature-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.feature-content li {
+  margin-bottom: 0.5rem;
+}
+
+.feature-content li::before {
+  content: "•";
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.feature-content.right li::before {
+  margin-left: 0;
+  margin-right: 0.5em;
 }
 .feature-image-container {
     flex: 3;

@@ -56,35 +56,53 @@ function Features({ theme }) {
     setExpandedImage(null);
   };
 
-  const features = [
-    {
-      title: 'Compose',
-      description:
-        'Select a folder, compose instructions, and leverage saved prompts. Preview files and review token usage before proceeding.',
-      imgSrc: `/images/compose-${theme}.png`,
-      alt: 'Compose view',
-    },
-    {
-      title: 'Chat',
-      description:
-        'Interact with the AI model to generate and refine code changes. Review and merge changes after each message.',
-      imgSrc: `/images/chat-${theme}.png`,
-      alt: 'Chat view',
-    },
-    {
-      title: 'Review',
-      description:
-        'Examine generated changes, accept modifications individually or all at once, and save everything to your disk.',
-      imgSrc: `/images/review-${theme}.png`,
-      alt: 'Review view',
-    },
-  ];
-
-  // Function to scroll to a specific ref
   const scrollToRef = (index) => {
-    featureRefs.current[index].scrollIntoView({ behavior: 'smooth' });
+    if (featureRefs.current[index]) {
+      featureRefs.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
 
+  const features = [
+  {
+    title: 'Compose',
+    description: [
+      'Select folder and files for AI interaction',
+      'Craft instructions using saved prompts',
+      'Preview files and estimate token usage',
+      'Copy prompt for external use or start chat',
+    ],
+    imgSrc: `/images/compose-${theme}.png`,
+    alt: 'Compose view showcasing folder selection, instruction composition, and file preview',
+    align: 'left',
+  },
+  {
+    title: 'Chat',
+    description: [
+      'AI reviews prompt and generates instructions',
+      'Engage in real-time dialogue with AI',
+      'Click merge to review proposed changes',
+      'Refine AI approach iteratively',
+    ],
+    imgSrc: `/images/chat-${theme}.png`,
+    alt: 'Chat view displaying AI interaction and change review process',
+    align: 'right',
+  },
+  {
+    title: 'Review',
+    description: [
+      'See all created, modified, and deleted files',
+      'Accept changes individually or all at once',
+      'Save approved modifications to disk',
+      'Return to chat or start fresh in compose',
+    ],
+    imgSrc: `/images/review-${theme}.png`,
+    alt: 'Review view showing detailed change analysis and acceptance options',
+    align: 'left',
+  },
+];
   return (
     <section id="features" className="features">
       <div className="features-container">
@@ -97,9 +115,13 @@ function Features({ theme }) {
               {index % 2 === 0 ? (
                 <>
                   <div className="feature-content">
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                  </div>
+  <h3>{feature.title}</h3>
+  <ul>
+    {feature.description.map((item, i) => (
+      <li key={i}>{item}</li>
+    ))}
+  </ul>
+</div>
                   <div className="feature-image-container">
                     <img
                       src={feature.imgSrc}
@@ -127,12 +149,12 @@ function Features({ theme }) {
               )}
             </div>
             <div className="arrow-container">
-              {index < features.length - 1 ? (
-                <Arrow onClick={() => scrollToRef(index + 1)} />
-              ) : (
-                <LoopArrow onClick={() => scrollToRef(0)} />
-              )}
-            </div>
+            {index < features.length - 1 ? (
+              <Arrow onClick={() => scrollToRef(index + 1)} />
+            ) : (
+              <LoopArrow onClick={() => scrollToRef(0)} />
+            )}
+          </div>
           </div>
         ))}
       </div>
