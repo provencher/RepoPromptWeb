@@ -2,43 +2,11 @@
   background: linear-gradient(to bottom, #BF360C, #D35400);
   color: #FFF8E1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Styles for dark mode */
-body.dark .ant-layout-header {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark .ant-menu {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark .ant-menu-item a {
-  color: #ffffff;
-}
-
-body.dark .toolbar {
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-body.dark .logo {
-  color: #4db6ff;
-}
-
-body.dark nav ul li a {
-  color: #ffffff;
-}
-
-body.dark .testflight-button {
-  background-color: #0078d4;
-}
-
-body.dark .testflight-button:hover {
-  background-color: #005a9e;
-}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -54,23 +22,28 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: #FFF8E1;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
+
 nav ul li a:hover {
   color: #FFD700;
-  font-weight: 500;
+  text-decoration: underline;
+}
+
+.ant-menu-item-selected a {
+  color: #FF5722 !important;
 }
 
 .testflight-button {
   background-color: #FF5722;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 12px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
 .testflight-button:hover {
-  background: linear-gradient(to bottom, #FFA726, #FFCC80);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
   background-color: #FFA500;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
