@@ -9,10 +9,8 @@
     "postinstall": "npx tailwindcss -i ./src/index.css -o ./src/tailwind.css"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "antd": "^5.8.0",
+    "@ant-design/icons": "^5.0.0",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.3.3",
     "postcss": "^8.4.27",

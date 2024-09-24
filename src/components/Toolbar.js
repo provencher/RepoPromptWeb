@@ -1,26 +1,20 @@
 import React from 'react';
-import { Layout, Menu, Button } from 'antd';
+import { Layout, Menu } from 'antd';
+import './Toolbar.css';
+
+const { Header } = Layout;
+
 function Toolbar() {
   return (
-    <header className="toolbar">
+    <Header className="toolbar">
       <div className="logo">Repo Prompt</div>
-      <nav>
-        <Menu mode="horizontal">
-          <Menu.Item key="home">
-            <a href="#home">Home</a>
-          </Menu.Item>
-          <Menu.Item key="features">
-            <a href="#features">Features</a>
-          </Menu.Item>
-          <Menu.Item key="screenshots">
-            <a href="#screenshots">Screenshots</a>
-          </Menu.Item>
-          <Menu.Item key="download">
-            <a href="#download" className="testflight-button">Join TestFlight</a>
-          </Menu.Item>
-        </Menu>
-      </nav>
-    </header>
+      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+        <Menu.Item key="1"><a href="#home">Home</a></Menu.Item>
+        <Menu.Item key="2"><a href="#features">Features</a></Menu.Item>
+        <Menu.Item key="3"><a href="#screenshots">Screenshots</a></Menu.Item>
+        <Menu.Item key="4"><a href="#join">Join TestFlight</a></Menu.Item>
+      </Menu>
+    </Header>
   );
 }
 
