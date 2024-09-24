@@ -1,16 +1,56 @@
 .features {
-  background: linear-gradient(to bottom, #FFE5B4, #FFDAB9);
-  color: #5D3A00;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  width: 100%; /* Ensure full width */
-  padding: 2rem 0; /* Add vertical padding for spacing */
+    background: var(--features-bg, linear-gradient(to bottom, #FFF7E0, #EED5BA));
+    color: var(--features-text, #5D3A00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    width: 100%; /* Ensure full width */
+    padding: 2rem 0; /* Add vertical padding for spacing */
 }
 
+.features .ant-card {
+    background-color: var(--card-bg, #FFF8E1);
+    border: 1px solid var(--card-border, #FFAB91);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 100%; /* Ensure cards take full width of their column */
+}
+
+.features .ant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.features .ant-card-head {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.features .ant-card-head-title {
+    color: var(--card-title, #E64A19);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.features .ant-card-body {
+    padding: 1rem;
+    color: var(--card-text, #5D3A00);
+}
+
+body.dark .features {
+    --features-bg: linear-gradient(to bottom, #121212, #1e1e1e); /* Updated to match the hero and screenshots */
+    --features-text: #E0E0E0;
+    --card-bg: #2f3640;
+    --card-border: #3a3a3a;
+    --card-title: #FF7043;
+    --card-text: #c8d6e5;
+    --card-title: #FF7043;
+    --card-text: #B0BEC5;
+}
 .features .ant-card {
   background-color: #FFF8E1;
   border: 1px solid #FFAB91;

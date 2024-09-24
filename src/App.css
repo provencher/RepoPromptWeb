@@ -23,7 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--color-background);
+    background: #EED5BA;
     color: var(--color-text);
     transition: background-color 0.3s, color 0.3s;
     width: 100%;

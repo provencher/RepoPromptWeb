@@ -11,17 +11,17 @@ const features = [
 ];
 
 function Features({ onFeatureClick }) {
-  return (
-    <div id="features" className="features">
-      <Row gutter={[16, 16]} className="mx-auto px-4" justify="center">
-        {features.map((feature) => (
-          <Col xs={24} sm={12} md={8} lg={6} xl={4} key={feature.index}>
-            <Card
-              title={feature.title}
-              headStyle={{ color: '#FFFDD0', cursor: 'pointer' }}
-              className="feature-card"
-              onClick={() => onFeatureClick(feature.index)}
-            >
+    return (
+        <div id="features" className="features">
+            <Row gutter={[16, 16]} className="mx-auto px-4" justify="center">
+                {features.map((feature) => (
+                    <Col xs={24} sm={12} md={8} lg={6} xl={4} key={feature.index}>
+                        <Card
+                            title={feature.title}
+                            headStyle={{ cursor: 'pointer' }}
+                            className="feature-card"
+                            onClick={() => onFeatureClick(feature.index)}
+                        >
               <p>{feature.description}</p>
             </Card>
           </Col>

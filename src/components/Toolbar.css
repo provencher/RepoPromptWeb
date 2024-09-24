@@ -1,7 +1,7 @@
 /* src/components/Toolbar.css */
 
 .toolbar {
-  background: linear-gradient(to bottom, #BF360C, #D35400);
+  background: linear-gradient(to bottom, #F8B84E, #F28C38);
   color: #FFF8E1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   position: sticky;
