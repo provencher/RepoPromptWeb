@@ -1,6 +1,7 @@
 // File: src/App.js
 
 import React, { useState, useEffect } from 'react';
+import { Layout } from 'antd';
 import './App.css';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
@@ -37,12 +38,14 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <Layout className="App">
       <Toolbar />
-      <Hero />
-      <Features theme={theme} />
+      <Layout.Content>
+        <Hero />
+        <Features theme={theme} />
+      </Layout.Content>
       <Footer />
-    </div>
+    </Layout>
   );
 }
 

@@ -1,11 +1,16 @@
-.toolbar {
-  background-color: #f8f9fa;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Styles for dark mode */
+body.dark .ant-layout-header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .ant-menu {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .ant-menu-item a {
+  color: #ffffff;
 }
 
 body.dark .toolbar {
