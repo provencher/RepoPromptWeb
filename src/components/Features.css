@@ -1,15 +1,16 @@
 .features {
-    background: linear-gradient(to bottom, #FFE5B4, #FFDAB9);
-    color: #5D3A00;
-    padding: 4rem 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: linear-gradient(to bottom, #FFE5B4, #FFDAB9);
+  color: #5D3A00;
+  padding: 3rem 0 2rem; /* Removed horizontal padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Poppins', sans-serif;
-  margin: 0 auto;
-  padding-inline: 5vw;
+  margin: 0;
+  width: 100%; /* Ensure full width */
 }
+
 
 .features .ant-card {
   background-color: #FFF8E1;
@@ -36,10 +37,15 @@
 }
 
 .features .ant-card-body {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .features .ant-row {
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%; /* Full width for the row */
+  margin: 0; /* Remove default margins */
+  padding: 0 1rem; /* Add some horizontal padding to the row instead */
+}
+
+.features .ant-col {
+  margin-bottom: 1rem;
 }

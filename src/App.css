@@ -1,30 +1,29 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .App {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 main {
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background: var(--color-background);
   color: var(--color-text);
   transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark {
-  background: linear-gradient(to bottom, #121212, #1e1e1e);
-  color: #E0E0E0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -33,35 +32,43 @@ a {
 }
 
 .cta-button {
-  background-color: var(--color-primary);
+  display: inline-block;
+  background-color: var(--color-primary, #FF5722);
   color: white;
-  box-shadow: var(--shadow-md);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
 }
 
 .cta-button:hover {
-  background-color: var(--color-secondary);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(to bottom, #FFA726, #FFCC80);
+  box-shadow: var(--shadow-lg, 0 6px 8px rgba(0,0,0,0.15));
+}
+
+section {
+  padding: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
 }
 
 /* Dark theme */
 body.dark {
-  background-color: #121212;
-  color: #ffffff;
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #E0E0E0;
 }
 
-/* Dark mode specific styles */
-body.dark .toolbar {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark .hero {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark .features {
+body.dark .toolbar,
+body.dark .hero,
+body.dark .features,
+body.dark .screenshots,
+body.dark .footer {
   background-color: #1e1e1e;
   color: #ffffff;
 }
@@ -71,14 +78,8 @@ body.dark .how-it-works {
   color: #ffffff;
 }
 
-body.dark .screenshots {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
 body.dark .cta-button {
   background-color: #0078d4;
-  color: #ffffff;
 }
 
 body.dark .cta-button:hover {
@@ -96,39 +97,47 @@ body.dark a {
   color: #4db6ff;
 }
 
-body.dark .footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-.App {
-  text-align: center;
-}
-
-section {
-  padding: 6rem 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-  margin-bottom: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #FF5722;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+/* Remove duplicate rules */
 .cta-button:hover {
-  background: linear-gradient(to bottom, #FFA726, #FFCC80);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  background-color: var(--color-secondary, #FFA500);
 }
 
-.cta-button:hover {
-  background-color: #FFA500;
+/* Add these new rules */
+.hero,
+.features,
+.screenshots {
+  margin: 0;
+  padding: 2rem 0;
+}
+
+.hero-content,
+.features .ant-row,
+.screenshots .ant-carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.features,
+.screenshots {
+  position: relative;
+}
+
+.features::after,
+.screenshots::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,87,34,0.5), rgba(255,165,0,0.5));
+}
+
+.features::after {
+  bottom: 0;
+}
+
+.screenshots::before {
+  top: 0;
 }

@@ -1,9 +1,11 @@
 .screenshots {
-    background-color: #FFE0B2;
-    color: #5D3A00;
-    padding: 4rem 0;
+  background-color: #FFE0B2;
+  color: #5D3A00;
+  padding: 2rem 0 3rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
+  margin: 0;
+  width: 100%; /* Ensure full width */
 }
 
 .screenshots::before {
@@ -12,9 +14,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to right, #FF5722, #FFA500);
 }
+
 
 .screenshot-item img {
   width: 100%;
@@ -39,10 +42,16 @@
 }
 
 .screenshots .ant-carousel {
-    max-width: 80%;
-    margin: 0 auto;
+  width: 100%; /* Full width for carousel */
+  max-width: none; /* Remove max-width constraint */
+  margin: 0;
 }
 
 .screenshots .slick-slide {
-    padding: 0 15px;
+  padding: 0; /* Remove slide padding */
 }
+
+.screenshots .slick-slide > div {
+  padding: 0 1rem;
+}
+

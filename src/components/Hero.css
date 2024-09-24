@@ -15,20 +15,17 @@ section#hero {
 
 .hero {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem 1rem;
   background-color: #FFE5B4;
 }
 
 .hero-content {
-  background-color: rgba(255, 245, 230, 0.9);
-  border-radius: 15px;
-  padding: 3rem;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
 }
 
 .hero h1 {
@@ -127,7 +124,7 @@ body.dark .testflight-button:hover {
   }
 
   .hero-content {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 }
 
@@ -137,6 +134,10 @@ body.dark .testflight-button:hover {
   }
 
   .hero-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
