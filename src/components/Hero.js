@@ -1,18 +1,26 @@
+// src/components/Hero.js
+
 import React from 'react';
-import { Row, Col, Button } from 'antd';
 import './Hero.css';
 
 function Hero() {
   return (
-    <div className="hero">
-      <Row justify="center" align="middle">
-        <Col xs={24} sm={20} md={16} lg={12}>
-          <h1>Repo Prompt</h1>
-          <p>Augment your AI-assisted coding flow, without replacing your IDE</p>
-          <Button type="primary" size="large" href="#join">Join TestFlight</Button>
-        </Col>
-      </Row>
-    </div>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Repo Prompt</h1>
+        <p>
+          Manage your repositories efficiently with AI-assisted code changes. Seamlessly integrate, modify, and review your projects with ease.
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc6_MPoiCtlJ8vdCZ_w6Mg2yC7CI7RtlMNinG82nbM14dJ9Dg/viewform"
+          className="cta-button testflight-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join Testflight
+        </a>
+      </div>
+    </section>
   );
 }
 

@@ -1,3 +1,5 @@
+/* src/components/Hero.css */
+
 .hero {
   background-color: #FFE5B4;
   padding: 8rem 2rem;
@@ -29,19 +31,21 @@
   line-height: 1.7;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: #FF5722;
+/* Reusing testflight-button styles from Toolbar.css */
+.testflight-button {
+  background: linear-gradient(45deg, #FF5722, #FFA500);
   color: white;
   padding: 1rem 2rem;
-  text-decoration: none;
   border-radius: 12px;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: inline-block;
+  text-decoration: none;
 }
 
-.cta-button:hover {
-  background-color: #FFA500;
-  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+.testflight-button:hover {
+  background: linear-gradient(45deg, #FFA500, #FFB732);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }

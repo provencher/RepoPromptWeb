@@ -18,9 +18,30 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #FFF8E1;
+  cursor: pointer;
 }
 
-/* Navigation Menu */
+/* Desktop Menu */
+.desktop-menu {
+  display: none;
+}
+
+/* Mobile Menu Button */
+.mobile-menu {
+  display: block;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: block;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Ant Design Menu Customizations */
 .nav-menu {
   background: transparent !important;
   border-bottom: none !important;
@@ -43,58 +64,10 @@
   font-weight: 600;
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #FFF8E1;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  font-weight: 500;
-}
-
-nav ul li a:hover {
-  color: #FFD700;
-  text-decoration: underline;
-}
-
 .ant-menu-item a {
   color: #FFF8E1 !important;
 }
 
 .ant-menu-item:hover a {
   color: #FFD700 !important;
-}
-
-.ant-menu-item-selected a {
-  color: #FFA500 !important;
-}
-
-.testflight-button {
-  background: linear-gradient(45deg, #FF5722, #FFA500);
-  color: white;
-  padding: 0.75rem 1.75rem;
-  border-radius: 12px;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.testflight-button .icon {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.testflight-button:hover {
-  background: linear-gradient(45deg, #FFA500, #FFB732);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
 }

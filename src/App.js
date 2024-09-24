@@ -1,24 +1,30 @@
-// File: src/App.js
+// src/App.js
 
 import React from 'react';
-import { Layout } from 'antd';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
-    <Layout>
+    <div className="App">
       <Toolbar />
-      <Hero />
-      <Features />
-      <Screenshots />
-      <Footer style={{ textAlign: 'center' }}>
-        Some Footer Content Here
-      </Footer>
-    </Layout>
+      <section id="hero">
+        <Hero />
+      </section>
+      <section id="features">
+        <Features />
+      </section>
+      <section id="screenshots">
+        <Screenshots />
+      </section>
+      <section id="footer">
+        <Footer />
+      </section>
+    </div>
   );
 }
 

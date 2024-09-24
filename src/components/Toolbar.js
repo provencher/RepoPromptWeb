@@ -1,43 +1,58 @@
 // src/components/Toolbar.js
 
 import React, { useState } from 'react';
-import { Menu } from 'antd';
-import { RocketOutlined } from '@ant-design/icons'; // Import desired icon
+import { Menu, Drawer, Button } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
 import './Toolbar.css';
 
 function Toolbar() {
-  const [current, setCurrent] = useState('home');
+  const [visible, setVisible] = useState(false);
 
-  const handleClick = (e) => {
-    setCurrent(e.key);
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+
+  const handleMenuClick = (e) => {
+    // Scroll to the section smoothly
+    const section = document.getElementById(e.key);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setVisible(false); // Close the drawer on mobile after clicking
   };
 
   return (
-    <div className="toolbar">
+    <header className="toolbar">
       <div className="logo">Repo Prompt</div>
-      <Menu
-        onClick={handleClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-        className="nav-menu"
-        theme="dark"
-      >
-        <Menu.Item key="home">
-          <a href="#home">Home</a>
-        </Menu.Item>
-        <Menu.Item key="features">
-          <a href="#features">Features</a>
-        </Menu.Item>
-        <Menu.Item key="screenshots">
-          <a href="#screenshots">Screenshots</a>
-        </Menu.Item>
-        {/* Add more menu items as needed */}
-      </Menu>
-      <a href="/testflight" className="testflight-button">
-        <RocketOutlined className="icon" />
-        Join TestFlight
-      </a>
-    </div>
+      <nav className="desktop-menu">
+        <Menu mode="horizontal" className="nav-menu" onClick={handleMenuClick}>
+          <Menu.Item key="hero">Home</Menu.Item>
+          <Menu.Item key="features">Features</Menu.Item>
+          <Menu.Item key="screenshots">Screenshots</Menu.Item>
+          <Menu.Item key="footer">Contact</Menu.Item>
+        </Menu>
+      </nav>
+      <div className="mobile-menu">
+        <Button type="text" icon={<MenuOutlined />} onClick={showDrawer} />
+        <Drawer
+          title="Menu"
+          placement="right"
+          onClose={onClose}
+          visible={visible}
+        >
+          <Menu mode="vertical" onClick={handleMenuClick}>
+            <Menu.Item key="hero">Home</Menu.Item>
+            <Menu.Item key="features">Features</Menu.Item>
+            <Menu.Item key="screenshots">Screenshots</Menu.Item>
+            <Menu.Item key="footer">Contact</Menu.Item>
+          </Menu>
+        </Drawer>
+      </div>
+    </header>
   );
 }
 
