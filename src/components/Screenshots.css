@@ -1,7 +1,7 @@
 .screenshots {
-  background-color: #FFE0B2;
-  color: #5D3A00;
-  padding: 4rem 2rem;
+    background-color: #FFE0B2;
+    color: #5D3A00;
+    padding: 4rem 0;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
 }
@@ -35,5 +35,14 @@
 }
 
 .screenshots .slick-dots li.slick-active button {
-  background-color: #FFA500;
+    background-color: #FFA500;
+}
+
+.screenshots .ant-carousel {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.screenshots .slick-slide {
+    padding: 0 15px;
 }

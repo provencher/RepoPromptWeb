@@ -1,16 +1,32 @@
 /* src/components/Hero.css */
 
+#root, .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section#hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
 .hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   background-color: #FFE5B4;
-  padding: 8rem 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero-content {
   background-color: rgba(255, 245, 230, 0.9);
   border-radius: 15px;
   padding: 3rem;
-  max-width: 900px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
@@ -25,13 +41,34 @@
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #A0522D;
   margin-bottom: 2rem;
-  line-height: 1.7;
+  text-align: center;
 }
 
-/* Reusing testflight-button styles from Toolbar.css */
+.cta-button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #FF5722;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  background: linear-gradient(to bottom, #FFA726, #FFCC80);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
 .testflight-button {
   background: linear-gradient(45deg, #FF5722, #FFA500);
   color: white;
@@ -48,4 +85,58 @@
   background: linear-gradient(45deg, #FFA500, #FFB732);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+}
+
+/* Dark theme styles */
+body.dark .hero {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark .hero-content {
+  background-color: rgba(38, 38, 38, 0.9);
+}
+
+body.dark .hero h1 {
+  color: #FF7043;
+}
+
+body.dark .hero p {
+  color: #E0E0E0;
+}
+
+body.dark .cta-button,
+body.dark .testflight-button {
+  background: linear-gradient(45deg, #FF7043, #FFB74D);
+  color: #ffffff;
+}
+
+body.dark .cta-button:hover,
+body.dark .testflight-button:hover {
+  background: linear-gradient(45deg, #FFB74D, #FFCC80);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
 }

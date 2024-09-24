@@ -1,7 +1,10 @@
 .footer {
-  background: linear-gradient(to bottom, #BF360C, #D35400);
-  color: #FFFFFF;
-  padding: 1rem 0;
+    background: linear-gradient(to bottom, #BF360C, #D35400);
+    color: #FFFFFF;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
   text-align: center;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }

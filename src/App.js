@@ -12,15 +12,17 @@ function App() {
   return (
     <div className="App">
       <Toolbar />
+      <main>
       <section id="hero">
         <Hero />
       </section>
       <section id="features">
         <Features />
       </section>
-      <section id="screenshots">
+<section id="screenshots">
         <Screenshots />
       </section>
+      </main>
       <section id="footer">
         <Footer />
       </section>
