@@ -7,6 +7,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
+        <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="hero-logo" />
         <h1>Repo Prompt</h1>
         <p>
           Manage your repositories efficiently with AI-assisted code changes. Seamlessly integrate, modify, and review your projects with ease.

@@ -28,7 +28,10 @@ function Toolbar() {
 
   return (
     <header className="toolbar">
-      <div className="logo">Repo Prompt</div>
+      <div className="logo">
+        <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="toolbar-logo" />
+        Repo Prompt
+      </div>
       <nav className="desktop-menu">
         <Menu mode="horizontal" className="nav-menu" onClick={handleMenuClick}>
           <Menu.Item key="hero">Home</Menu.Item>

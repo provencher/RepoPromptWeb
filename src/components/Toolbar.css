@@ -19,6 +19,14 @@
   font-weight: bold;
   color: #FFF8E1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
 /* Desktop Menu */

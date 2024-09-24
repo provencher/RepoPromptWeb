@@ -26,6 +26,15 @@ section#hero {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 .hero h1 {
