@@ -13,19 +13,18 @@ function App() {
     <div className="App">
       <Toolbar />
       <main>
-      <section id="hero">
-        <Hero />
-      </section>
-      <section id="features">
-        <Features />
-      </section>
-<section id="screenshots">
-        <Screenshots />
-      </section>
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="features">
+          <Features />
+        </section>
+        <section id="screenshots">
+          <Screenshots />
+        </section>
       </main>
-      <section id="footer">
-        <Footer />
-      </section>
+      {/* Removed the <section id="footer"> wrapper */}
+      <Footer />
     </div>
   );
 }

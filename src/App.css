@@ -19,6 +19,7 @@
   }
   
   main {
+    flex: 1; /* Allows main to grow and take up available space */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +30,7 @@
     overflow-x: hidden;
   }
   
+  /* Optional: If you have specific styles for sections, ensure they don't interfere with the footer */
   section {
     padding: 2rem 0;
     width: 100%;
