@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Menu, Drawer, Button } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import ThemeSwitcher from './ThemeSwitcher';
 import './Toolbar.css';
 
 function Toolbar() {
@@ -52,6 +53,7 @@ function Toolbar() {
           </Menu>
         </Drawer>
       </div>
+      <ThemeSwitcher />
     </header>
   );
 }

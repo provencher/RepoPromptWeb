@@ -15,7 +15,7 @@ function Features() {
     <div className="features">
       <Row gutter={[16, 16]}>
         {features.map((feature, index) => (
-          <Col xs={24} sm={12} md={8} key={index}>
+          <Col xs={24} sm={12} md={8} lg={6} xl={4} key={index}>
             <Card title={feature.title} headStyle={{ color: '#FFFDD0' }}>
               <p>{feature.description}</p>
             </Card>

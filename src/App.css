@@ -1,12 +1,35 @@
 body {
-  font-family: 'Roboto', 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(to bottom, #FFFDD0, #FFE5B4);
-  color: #5D3A00;
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: linear-gradient(to bottom, #121212, #1e1e1e);
+  color: #E0E0E0;
+}
+
+a {
+  color: var(--color-accent);
+  transition: color 0.3s;
+}
+
+.cta-button {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Dark theme */

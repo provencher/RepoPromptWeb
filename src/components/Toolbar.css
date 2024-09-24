@@ -55,17 +55,17 @@
   background: transparent !important;
 }
 
-.ant-menu-item-selected {
-  background: transparent !important;
+.toolbar .ant-menu-item a {
+  color: var(--color-text);
 }
 
-.ant-menu-item-selected a {
-  color: #FFA500 !important;
+.toolbar .ant-menu-item-selected a {
+  color: var(--color-primary);
   font-weight: 600;
 }
 
-.ant-menu-item a {
-  color: #FFF8E1 !important;
+.toolbar .ant-menu-item:hover a {
+  color: var(--color-secondary);
 }
 
 .ant-menu-item:hover a {
