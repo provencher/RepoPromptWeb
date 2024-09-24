@@ -27,3 +27,5 @@ To create a production build:
 ## Deployment
 
 This static website can be easily deployed to various hosting platforms such as GitHub Pages, Netlify, or Vercel.
+
+Fixed readme
