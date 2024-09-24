@@ -1,143 +1,146 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-main {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: var(--color-background);
-  color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-a {
-  color: var(--color-accent);
-  transition: color 0.3s;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--color-primary, #FF5722);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
-}
-
-.cta-button:hover {
-  background: linear-gradient(to bottom, #FFA726, #FFCC80);
-  box-shadow: var(--shadow-lg, 0 6px 8px rgba(0,0,0,0.15));
-}
-
-section {
-  padding: 2rem 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-h1, h2, h3 {
-  margin-bottom: 1rem;
-}
-
-/* Dark theme */
-body.dark {
-  background: linear-gradient(to bottom, #121212, #1e1e1e);
-  color: #E0E0E0;
-}
-
-body.dark .toolbar,
-body.dark .hero,
-body.dark .features,
-body.dark .screenshots,
-body.dark .footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark .how-it-works {
-  background-color: #262626;
-  color: #ffffff;
-}
-
-body.dark .cta-button {
-  background-color: #0078d4;
-}
-
-body.dark .cta-button:hover {
-  background-color: #005a9e;
-}
-
-body.dark .feature-item,
-body.dark .step {
-  background-color: #262626;
-  color: #ffffff;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-body.dark a {
-  color: #4db6ff;
-}
-
-/* Remove duplicate rules */
-.cta-button:hover {
-  background-color: var(--color-secondary, #FFA500);
-}
-
-/* Add these new rules */
-.hero,
-.features,
-.screenshots {
-  margin: 0;
-  padding: 2rem 0;
-}
-
-.hero-content,
-.features .ant-row,
-.screenshots .ant-carousel {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.features,
-.screenshots {
-  position: relative;
-}
-
-.features::after,
-.screenshots::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, rgba(255,87,34,0.5), rgba(255,165,0,0.5));
-}
-
-.features::after {
-  bottom: 0;
-}
-
-.screenshots::before {
-  top: 0;
-}
+/* ================================
+   Base Styles
+   ================================ */
+   body {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  section {
+    padding: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    color: var(--color-accent);
+    transition: color 0.3s;
+  }
+  
+  /* ================================
+     Buttons
+     ================================ */
+  .cta-button {
+    display: inline-block;
+    background-color: var(--color-primary, #FF5722);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(to bottom, #FFA726, #FFCC80);
+    box-shadow: var(--shadow-lg, 0 6px 8px rgba(0, 0, 0, 0.15));
+  }
+  
+  /* ================================
+     Dark Theme
+     ================================ */
+  body.dark {
+    background: linear-gradient(to bottom, #121212, #1e1e1e);
+    color: #E0E0E0;
+  }
+  
+  body.dark .toolbar,
+  body.dark .hero,
+  body.dark .features,
+  body.dark .screenshots,
+  body.dark .footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  body.dark .how-it-works {
+    background-color: #262626;
+    color: #ffffff;
+  }
+  
+  body.dark .cta-button {
+    background-color: #0078d4;
+  }
+  
+  body.dark .cta-button:hover {
+    background-color: #005a9e;
+  }
+  
+  body.dark .feature-item,
+  body.dark .step {
+    background-color: #262626;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark a {
+    color: #4db6ff;
+  }
+  
+  /* ================================
+     Layout Components
+     ================================ */
+  .hero,
+  .features,
+  .screenshots {
+    margin: 0;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .hero-content,
+  .features .ant-row,
+  .screenshots .ant-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .features::after,
+  .screenshots::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 87, 34, 0.5), rgba(255, 165, 0, 0.5));
+  }
+  
+  .features::after {
+    bottom: 0;
+  }
+  
+  .screenshots::before {
+    top: 0;
+  }
