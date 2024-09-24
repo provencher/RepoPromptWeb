@@ -1,151 +1,33 @@
-// File: src/components/Features.js
+// src/components/Features.js
 
-import React, { useRef, useState } from 'react';
+import React from 'react';
+import { Card, Row, Col } from 'antd';
 import './Features.css';
 
-// SVG Arrow Component
-const Arrow = ({ onClick }) => (
-  <svg
-    className="arrow"
-    onClick={onClick}
-    xmlns="http://www.w3.org/2000/svg"
-    width="60"
-    height="60"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <line x1="12" y1="5" x2="12" y2="19" />
-    <polyline points="19 12 12 19 5 12" />
-  </svg>
-);
+const features = [
+  { title: 'Compose', description: 'Select files and folders for your prompt\'s context.', index: 0 },
+  { title: 'Chat', description: 'Talk to the AI about your files and let it modify them.', index: 1 },
+  { title: 'Review', description: 'Analyze all created, modified, and deleted files.', index: 2 },
+];
 
-// SVG Circular Arrow Component (Loop Arrow)
-const LoopArrow = ({ onClick }) => (
-  <svg
-    className="loop-arrow"
-    onClick={onClick}
-    xmlns="http://www.w3.org/2000/svg"
-    width="60"
-    height="60"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="23 4 23 10 17 10" />
-    <path d="M20.49 15a9 9 0 1 1-3.49-7.86" />
-  </svg>
-);
-
-function Features({ theme }) {
-  // Create refs for each feature
-  const featureRefs = useRef([]);
-  const [expandedImage, setExpandedImage] = useState(null);
-
-  const handleImageClick = (imgSrc) => {
-    setExpandedImage(imgSrc);
-  };
-
-  const closeExpandedImage = () => {
-    setExpandedImage(null);
-  };
-
-  const scrollToRef = (index) => {
-    if (featureRefs.current[index]) {
-      featureRefs.current[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
-  const features = [
-    {
-      title: 'Compose',
-      description: [
-        'Select files and folders that will be a part of your prompt\'s context',
-        'Accelerate your workflow with saved prompts, defining reusable concepts for the LLM to follow',
-        'Preview files by clicking them and estimate token usage',
-        'Copy your constructed prompt to the clipboard for external use or start an AI chat session',
-      ],
-      imgSrc: `/images/compose-${theme}.png`,
-      alt: 'Compose view: intuitive file selection, instruction composition, and change preview',
-    },
-    {
-      title: 'Chat',
-      description: [
-        'Using your own API-keys for OpenAI or Anthropic, begin a chat that will allow the LLM to interact with your files directly',
-        'Talk to the AI about your files, or let it modify them by creating diffs for files even thousands of lines long',
-        'Click merge to review and accept proposed changes',
-        'Your updated files will be sent to the AI automatically in the next message to further iterate and make new diffs',
-      ],
-      imgSrc: `/images/chat-${theme}.png`,
-      alt: 'Chat view: interactive AI conversation and streamlined change review process',
-    },
-    {
-      title: 'Review',
-      description: [
-        'Analyze all created, modified, and deleted files in detail',
-        'Accept changes individually or in bulk with a single click',
-        'Save approved modifications directly to your local disk',
-        'Return to chat for further iterations or start fresh in compose',
-      ],
-      imgSrc: `/images/review-${theme}.png`,
-      alt: 'Review view: comprehensive change analysis and flexible acceptance options',
-    },
-  ];
-
-  return (
-    <section id="features" className="features">
-      <div className="features-container">
-        {features.map((feature, index) => (
-          <div key={index}>
-            <div
-              className="feature-item"
-              ref={(el) => (featureRefs.current[index] = el)}
-            >
-              <div className="feature-content">
-                <h3>{feature.title}</h3>
-                <ul>
-                  {feature.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="feature-image-container">
-                <img
-                  src={feature.imgSrc}
-                  alt={feature.alt}
-                  className="feature-image"
-                  onClick={() => handleImageClick(feature.imgSrc)}
-                />
-              </div>
-            </div>
-            <div className="arrow-container">
-              {index < features.length - 1 ? (
-                <Arrow onClick={() => scrollToRef(index + 1)} />
-              ) : (
-                <LoopArrow onClick={() => scrollToRef(0)} />
-              )}
-            </div>
-          </div>
+function Features({ onFeatureClick }) {
+    return (
+        <div id="features" className="features">
+            <Row gutter={[16, 16]} className="mx-auto px-4" justify="center">
+                {features.map((feature) => (
+                    <Col xs={24} sm={12} md={8} lg={6} xl={4} key={feature.index}>
+                        <Card
+                            title={feature.title}
+                            headStyle={{ cursor: 'pointer' }}
+                            className="feature-card"
+                            onClick={() => onFeatureClick(feature.index)}
+                        >
+              <p>{feature.description}</p>
+            </Card>
+          </Col>
         ))}
-      </div>
-      {expandedImage && (
-        <div className="expanded-image-overlay" onClick={closeExpandedImage}>
-          <div className="expanded-image-container">
-            <img src={expandedImage} alt="Expanded view" className="expanded-image" />
-            <button className="close-button" onClick={closeExpandedImage}>×</button>
-          </div>
-        </div>
-      )}
-    </section>
+      </Row>
+    </div>
   );
 }
 

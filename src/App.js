@@ -1,47 +1,33 @@
-// File: src/App.js
+// src/App.js
 
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useRef } from 'react';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import Screenshots from './components/Screenshots';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  // Create a reference to the Screenshots carousel
+  const carouselRef = useRef(null);
 
-  useEffect(() => {
-    // Detect system preference
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Function to update theme
-    const updateTheme = (isDark) => {
-      setTheme(isDark ? 'dark' : 'light');
-      document.body.classList.toggle('dark', isDark);
-    };
-
-    // Set initial theme based on system preference
-    updateTheme(prefersDarkScheme.matches);
-
-    // Listen for changes to the system preference
-    const themeChangeListener = (e) => {
-      updateTheme(e.matches);
-    };
-
-    prefersDarkScheme.addEventListener('change', themeChangeListener);
-
-    // Cleanup listener on unmount
-    return () => {
-      prefersDarkScheme.removeEventListener('change', themeChangeListener);
-    };
-  }, []);
+  // Handler to navigate to a specific slide
+  const handleFeatureClick = (index) => {
+    if (carouselRef.current) {
+      carouselRef.current.goTo(index, false); // false for animated transition
+    }
+  };
 
   return (
     <div className="App">
       <Toolbar />
       <Hero />
-      <Features theme={theme} />
-      <Footer />
+      {/* Pass the handler to Features */}
+      <Features onFeatureClick={handleFeatureClick} />
+      {/* Attach the ref to Screenshots */}
+      <Screenshots ref={carouselRef} />
+      <Footer />     
     </div>
   );
 }

@@ -1,30 +1,35 @@
-import React from 'react';
+// src/components/Screenshots.js
+
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { Carousel } from 'antd';
 import './Screenshots.css';
 
-function Screenshots({ theme }) {
+const Screenshots = forwardRef((props, ref) => {
+  const carouselRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    goTo: (slideIndex, dontAnimate) => {
+      if (carouselRef.current && typeof carouselRef.current.goTo === 'function') {
+        carouselRef.current.goTo(slideIndex, dontAnimate);
+      }
+    },
+  }));
+
   return (
-    <section id="screenshots" className="screenshots">
-      <h2>Visual Tour</h2>
-      <p>Experience the full workflow of Repo Prompt. See how the app guides you through composing, chatting, and reviewing.</p>
-      <div className="screenshot-grid">
+    <div className="screenshots">
+      <Carousel ref={carouselRef} autoplay>
         <div className="screenshot-item">
-          <h3>Compose</h3>
-          <img src={`/images/compose-${theme}.png`} alt={`Compose view in ${theme} mode`} />
-          <p>Select files, craft instructions, and prepare for AI interaction.</p>
+          <img src="/images/compose-light.png" alt="Compose feature interface showing file selection and context setting" />
         </div>
         <div className="screenshot-item">
-          <h3>Chat</h3>
-          <img src={`/images/chat-${theme}.png`} alt={`Chat view in ${theme} mode`} />
-          <p>Engage with AI to generate and refine code changes.</p>
+          <img src="/images/chat-light.png" alt="Chat interface demonstrating AI conversation about selected files" />
         </div>
         <div className="screenshot-item">
-          <h3>Review</h3>
-          <img src={`/images/review-${theme}.png`} alt={`Review view in ${theme} mode`} />
-          <p>Examine, accept, and save generated changes to your project.</p>
+          <img src="/images/review-light.png" alt="Review interface displaying changes made to files by AI" />
         </div>
-      </div>
-    </section>
+      </Carousel>
+    </div>
   );
-}
+});
 
 export default Screenshots;

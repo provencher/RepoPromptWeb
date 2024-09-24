@@ -1,3 +1,5 @@
+// src/components/Hero.js
+
 import React from 'react';
 import './Hero.css';
 
@@ -5,14 +7,19 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
+        <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="hero-logo" />
         <h1>Repo Prompt</h1>
-        <h2>Augment your AI-assisted coding flow, without replacing your IDE</h2>
-        <ul>
-          <li>Create targeted prompts using your project files</li>
-          <li>Provide AI with seamless access to your code context</li>
-          <li>Review and selectively implement AI-proposed changes</li>
-          <li>Eliminate the need for manual copy-pasting when integrating changes</li>
-        </ul>
+        <p>
+          Manage your repositories efficiently with AI-assisted code changes. Seamlessly integrate, modify, and review your projects with ease.
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc6_MPoiCtlJ8vdCZ_w6Mg2yC7CI7RtlMNinG82nbM14dJ9Dg/viewform"
+          className="cta-button testflight-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join Testflight
+        </a>
       </div>
     </section>
   );

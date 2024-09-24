@@ -1,59 +1,81 @@
+/* src/components/Toolbar.css */
+
 .toolbar {
-  background-color: #f8f9fa;
-  padding: 1rem 2rem;
+  background: linear-gradient(to bottom, #F8B84E, #F28C38);
+  color: #FFF8E1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0 2rem;
 }
 
-body.dark .toolbar {
-  background-color: #1e1e1e;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-body.dark .logo {
-  color: #4db6ff;
-}
-
-body.dark nav ul li a {
-  color: #ffffff;
-}
-
-body.dark .testflight-button {
-  background-color: #0078d4;
-}
-
-body.dark .testflight-button:hover {
-  background-color: #005a9e;
-}
+/* Logo Styling */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #007bff;
-}
-
-nav ul {
-  list-style-type: none;
+  color: #FFF8E1;
+  cursor: pointer;
   display: flex;
-  gap: 2rem;
+  align-items: center;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+.toolbar-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
-.testflight-button {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+/* Desktop Menu */
+.desktop-menu {
+  display: none;
 }
 
-.testflight-button:hover {
-  background-color: #0056b3;
+/* Mobile Menu Button */
+.mobile-menu {
+  display: block;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: block;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Ant Design Menu Customizations */
+.nav-menu {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+.ant-menu-item {
+  background: transparent !important;
+}
+
+.toolbar .ant-menu-item a {
+  color: var(--color-text);
+}
+
+.toolbar .ant-menu-item-selected a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.toolbar .ant-menu-item:hover a {
+  color: var(--color-secondary);
+}
+
+.ant-menu-item:hover a {
+  color: #FFD700 !important;
 }
