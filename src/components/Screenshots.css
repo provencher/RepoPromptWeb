@@ -1,5 +1,6 @@
 .screenshots {
-  background-color: #f8f9fa;
+  background-color: #FFE0B2;
+  color: #5D3A00;
   padding: 4rem 2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -13,11 +14,7 @@ body.dark .screenshot-item img {
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 .screenshot-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .screenshot-item {
@@ -28,6 +25,7 @@ body.dark .screenshot-item img {
 .screenshot-item img {
   width: 100%;
   height: auto;
+  border: 1px solid #FFAB91;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

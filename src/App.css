@@ -1,14 +1,12 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
-  color: #333333;
+  background: linear-gradient(to bottom, #FFFDD0, #FFE5B4);
+  color: #5D3A00;
 }
 
 /* Dark theme */
@@ -72,7 +70,8 @@ body.dark .footer {
 }
 
 section {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3 {
@@ -81,15 +80,20 @@ h1, h2, h3 {
 
 .cta-button {
   display: inline-block;
-  background-color: #007bff;
+  background-color: #FF5722;
   color: white;
   padding: 0.8rem 1.5rem;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 12px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.cta-button:hover {
+  background: linear-gradient(to bottom, #FFA726, #FFCC80);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 .cta-button:hover {
-  background-color: #0056b3;
+  background-color: #FFA500;
 }
