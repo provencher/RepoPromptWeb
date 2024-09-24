@@ -1,3 +1,5 @@
+/* src/components/Toolbar.css */
+
 .toolbar {
   background: linear-gradient(to bottom, #BF360C, #D35400);
   color: #FFF8E1;
@@ -5,24 +7,55 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
 
+/* Logo Styling */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #FFFFFF;
+  color: #FFF8E1;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+.ant-menu-item {
+  background: transparent !important;
+}
+
+.ant-menu-item-selected {
+  background: transparent !important;
+}
+
+.ant-menu-item-selected a {
+  color: #FFA500 !important;
+  font-weight: 600;
 }
 
 nav ul {
   list-style-type: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #FFF8E1;
   transition: color 0.3s ease, text-decoration 0.3s ease;
+  font-weight: 500;
 }
 
 nav ul li a:hover {
@@ -30,20 +63,38 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+.ant-menu-item a {
+  color: #FFF8E1 !important;
+}
+
+.ant-menu-item:hover a {
+  color: #FFD700 !important;
+}
+
 .ant-menu-item-selected a {
-  color: #FF5722 !important;
+  color: #FFA500 !important;
 }
 
 .testflight-button {
-  background-color: #FF5722;
+  background: linear-gradient(45deg, #FF5722, #FFA500);
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 12px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.testflight-button .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .testflight-button:hover {
-  background-color: #FFA500;
-  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(45deg, #FFA500, #FFB732);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
