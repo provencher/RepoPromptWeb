@@ -5,9 +5,9 @@ import { Card, Row, Col } from 'antd';
 import './Features.css';
 
 const features = [
-  { title: 'Compose', description: 'Select files and folders for your prompt\'s context.', index: 0 },
-  { title: 'Chat', description: 'Talk to the AI about your files and let it modify them.', index: 1 },
-  { title: 'Review', description: 'Analyze all created, modified, and deleted files.', index: 2 },
+  { title: 'Compose', description: 'Select files and folders for your prompt\'s context. Use saved prompts and a repository map to guide the AI\'s output', index: 0 },
+  { title: 'Chat', description: 'Iterate on your files, or learn about how they work, with full control over the context.', index: 1 },
+  { title: 'Review', description: 'Review all AI made changes, file by file, and approve changes, piecemeal or in bulk.', index: 2 },
 ];
 
 function Features({ onFeatureClick }) {
