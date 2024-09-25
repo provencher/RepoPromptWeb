@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease, color 0.1s ease; /* Changed color transition to 0.1s */
+  transition: opacity 0.5s ease-in-out, background-color 0.3s ease, color 0.1s ease;
 }
 
 .toolbar-content {
@@ -14,14 +14,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .logo-title {
   display: flex;
   align-items: center;
-  transition: opacity 0.3s ease;
 }
 
 .logo {
@@ -51,7 +50,29 @@
   color: inherit;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.1s ease; /* Ensure link color transitions are also fast */
+  transition: color 0.2s ease;
+}
+
+.nav-items a:hover {
+  color: var(--color-primary, #FF5722);
+}
+
+.theme-and-hamburger {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switcher {
+  /* Ensure the theme switcher is hidden on mobile */
+}
+
+.hamburger-button {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0;
 }
 
 .toolbar.dark {
@@ -70,10 +91,45 @@
   }
 
   .nav-items {
-    display: none;
+    display: none; /* Hide navigation items on mobile */
   }
 
-  .logo-title {
-    flex-grow: 0;
+  .theme-switcher {
+    display: none; /* Hide theme switcher on mobile */
+  }
+
+  .hamburger-button {
+    display: block; /* Show hamburger button on mobile */
+    color: inherit;
+  }
+
+  .drawer-nav-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drawer-nav-items li {
+    margin: 1rem 0;
+  }
+
+  .drawer-nav-items a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .drawer-nav-items a:hover {
+    color: var(--color-primary, #FF5722);
+  }
+
+  .drawer-theme-switcher {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
   }
 }

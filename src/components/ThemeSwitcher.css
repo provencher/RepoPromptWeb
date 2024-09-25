@@ -16,3 +16,10 @@
   .theme-switcher:hover {
     filter: grayscale(0%); /* Remove grayscale on hover to show colors */
   }
+  
+  @media (max-width: 768px) {
+    /* Ensure the theme switcher inside the drawer is visible */
+    .drawer-theme-switcher .theme-switcher {
+      filter: grayscale(0%);
+    }
+  }
