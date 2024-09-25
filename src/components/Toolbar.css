@@ -1,16 +1,22 @@
 /* src/components/Toolbar.css */
 
 .toolbar {
-  background: linear-gradient(to bottom, #F8B84E, #F28C38);
+  background: transparent;
   color: #FFF8E1;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-  position: sticky;
+  box-shadow: none;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  transition: background-color 0.3s ease;
+}
+.toolbar.visible {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Logo Styling */
@@ -21,6 +27,11 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.toolbar.visible .logo {
+  opacity: 1;
 }
 
 .toolbar-logo {
