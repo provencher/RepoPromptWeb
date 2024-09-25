@@ -44,8 +44,17 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
     <>
       <nav className={`toolbar ${isDarkMode ? 'dark' : ''} ${isScrolled ? 'scrolled' : ''}`}>
         <div className="toolbar-content">
+          {/* Hamburger menu is visible on mobile */}
+          <Button
+            type="text"
+            className="hamburger-button"
+            onClick={showDrawer}
+            icon={<FaBars size={24} />}
+            aria-label="Open navigation menu"
+          />
+
           {/* Title and Logo */}
-          <div className={`logo-title ${isScrolled ? 'visible' : 'hidden'}`}>
+          <div className="logo-title">
             <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="logo" />
             <h1 className="title">Repo Prompt</h1>
           </div>
@@ -61,15 +70,6 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
           <div className="theme-and-hamburger">
             {/* ThemeSwitcher is visible on desktop */}
             <ThemeSwitcher isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-
-            {/* Hamburger menu is visible on mobile */}
-            <Button
-              type="text"
-              className="hamburger-button"
-              onClick={showDrawer}
-              icon={<FaBars size={24} />}
-              aria-label="Open navigation menu"
-            />
           </div>
         </div>
       </nav>

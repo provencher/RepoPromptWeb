@@ -11,38 +11,31 @@
   padding: 1rem 2rem; /* Initial padding */
 }
 
+/* Semi-transparent background when scrolled */
 .toolbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.9); /* Light mode background when scrolled */
-}
-
-.toolbar.dark.scrolled {
-  background-color: rgba(30, 30, 30, 0.9); /* Dark mode background when scrolled */
+  background-color: rgba(255, 87, 34, 0.1); /* Primary color with 0.8 opacity */
+  backdrop-filter: blur(10px);
 }
 
 .toolbar-content {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center navigation links */
+  justify-content: space-between; /* Changed from center to space-between */
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .logo-title {
-  position: absolute;
-  left: 2rem;
+  /* Removed position: absolute; */
   display: flex;
   align-items: center;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
   transition: opacity 0.5s ease;
 }
 
-.logo-title.visible {
-  opacity: 1;
-}
-
-.logo-title.hidden {
-  opacity: 0;
+.toolbar.scrolled .logo-title {
+  opacity: 1; /* Fully visible when scrolled */
 }
 
 .logo {
@@ -86,6 +79,19 @@
 @media (max-width: 768px) {
   .theme-and-hamburger .theme-switcher {
     display: none;
+  }
+
+  /* Reorder elements on mobile */
+  .logo-title {
+    order: 1; /* Logo title first */
+  }
+
+  .theme-and-hamburger {
+    order: 2; /* Theme and other elements next */
+  }
+
+  .hamburger-button {
+    order: 3; /* Hamburger button last */
   }
 }
 
@@ -134,8 +140,17 @@
   color: var(--color-primary, #FF5722);
 }
 
+/* Position ThemeSwitcher at top-right in Drawer */
 .drawer-theme-switcher {
-  margin-top: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  /* Remove margin-top and align to the top-right */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+/* Ensure Drawer has relative positioning to position ThemeSwitcher correctly */
+.ant-drawer-body {
+  position: relative;
 }
