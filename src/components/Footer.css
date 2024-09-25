@@ -1,8 +1,16 @@
+/* src/components/Footer.css */
+
 .footer {
-  background: linear-gradient(to bottom, #F28C38, #D84725);
+  background: linear-gradient(to bottom, #FF7043, #FFB74D); /* Updated to lighter gradient */
   color: #FFFFFF;
   padding: 0.75rem 0;
   width: 100%;
   text-align: center;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+body.dark .footer {
+  background: linear-gradient(to bottom, #FF7043, #FFB74D); /* Consistent gradient for dark mode */
+  color: #E0E0E0; /* Adjust text color for dark mode */
 }

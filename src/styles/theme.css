@@ -1,35 +1,37 @@
 /* src/styles/theme.css */
 
 :root {
-  --color-primary: #FF5722;
+  --color-primary: #FF7043;          /* Updated primary color */
   --color-secondary: #FFA500;
-  --color-background: #FFFDD0;
-  --color-text: #3D2B00;
-  --color-accent: #0056b3;
+  --color-accent: #0078D4;           /* New accent color */
+  --color-accent-light: #6AB0FF;     /* Alternative accent color */
+  --color-background: #FFF5EC;       /* Soft cream for light mode */
+  --color-text: #3D2B00;             /* Deep brown for light mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Toolbar Scrolled Background */
-  --toolbar-scrolled-bg-color: rgba(255, 87, 34, 0.1);
+  --toolbar-scrolled-bg-color: rgba(255, 112, 67, 0.1);
 }
 
 body.dark {
-  --color-primary: #FF7043;
+  --color-primary: #FF7043;           /* Consistent primary color in dark mode */
   --color-secondary: #FFB300;
-  --color-background: #121212;
-  --color-text: #E0E0E0;
-  --color-accent: #6ab0ff;
+  --color-accent: #6AB0FF;            /* Updated accent color for dark mode */
+  --color-accent-light: #6AB0FF;      /* Consistent accent color */
+  --color-background: #121212;         /* Deep gray for dark mode */
+  --color-text: #E0E0E0;               /* Off-white for dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
 
   /* Toolbar Scrolled Background for Dark Mode */
-  --toolbar-scrolled-bg-color: rgba(255, 112, 67, 0.1);
+  --toolbar-scrolled-bg-color: rgba(30, 30, 30, 0.8);
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.1s ease; /* Added transition for color */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }

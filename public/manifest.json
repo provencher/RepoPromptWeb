@@ -1,3 +1,4 @@
+{
   "short_name": "Repo Prompt",
   "name": "Repo Prompt - AI-Assisted Code Management",
   "icons": [
@@ -19,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#FF5722",
-  "background_color": "#FFFDD0"
-  }
+  "theme_color": "#FF7043",         
+  "background_color": "#FFF5EC"      
+}

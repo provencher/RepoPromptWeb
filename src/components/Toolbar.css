@@ -6,14 +6,14 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: transparent; /* Initially transparent */
+  background-color: rgba(255, 255, 255, 0.8); /* Updated for light mode */
   transition: background-color 0.5s ease, padding 0.3s ease;
   padding: 1rem 2rem; /* Initial padding */
 }
 
 /* Semi-transparent background when scrolled using CSS variable */
 .toolbar.scrolled {
-  background-color: var(--toolbar-scrolled-bg-color);
+  background-color: var(--toolbar-scrolled-bg-color); /* Updated via CSS variable */
   backdrop-filter: blur(10px);
 }
 
@@ -47,7 +47,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  color: var(--color-text, #3D2B00);
+  color: var(--color-text); /* Updated to use CSS variable */
 }
 
 /* Wrapper for absolutely centered nav-items */
@@ -73,7 +73,7 @@
 }
 
 .nav-items li a:hover {
-  color: var(--color-primary, #FF5722);
+  color: var(--color-accent); /* Updated to use accent color */
 }
 
 .theme-and-hamburger {
@@ -143,7 +143,7 @@
 }
 
 .drawer-nav-items a:hover {
-  color: var(--color-primary, #FF5722);
+  color: var(--color-accent); /* Updated to use accent color */
 }
 
 /* Position ThemeSwitcher at top-right in Drawer */
