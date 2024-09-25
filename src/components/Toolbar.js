@@ -1,79 +1,48 @@
 // src/components/Toolbar.js
-
-import React, { useState, useEffect, useRef } from 'react';
-import { Menu, Drawer, Button } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Toolbar.css';
 
-function Toolbar() {
-  const [visible, setVisible] = useState(false);
-  const [opacity, setOpacity] = useState(0);
-  const heroRef = useRef(null);
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = heroRef.current?.offsetHeight || 500; // Fallback to 500px if hero not found
-      const scrollPosition = window.scrollY;
-      const newOpacity = Math.min(scrollPosition / heroHeight, 1);
-      setOpacity(newOpacity);
-    };
-    const heroElement = document.getElementById('hero');
-    if (heroElement) {
-      heroRef.current = heroElement;
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  const showDrawer = () => {
-    setVisible(true);
-  };
+const Toolbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const onClose = () => {
-    setVisible(false);
-  };
-
-  const handleMenuClick = (e) => {
-    // Scroll to the section smoothly
-    const section = document.getElementById(e.key);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setVisible(false); // Close the drawer on mobile after clicking
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <header className={`toolbar ${opacity > 0 ? 'visible' : ''}`} style={{ backgroundColor: `rgba(248, 184, 78, ${opacity})` }}>
+    <div className="toolbar fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
       <div className="logo">
-        <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="toolbar-logo" />
-        Repo Prompt
+        <img src="/images/RepoPromptLogoFull.png" alt="Repo Prompt Logo" className="h-8" />
       </div>
-      <nav className="desktop-menu">
-        <Menu mode="horizontal" className="nav-menu" onClick={handleMenuClick}>
-          <Menu.Item key="hero">Home</Menu.Item>
-          <Menu.Item key="features">Features</Menu.Item>
-          <Menu.Item key="screenshots">Screenshots</Menu.Item>
-          <Menu.Item key="footer">Contact</Menu.Item>
-        </Menu>
-      </nav>
-      <div className="mobile-menu">
-        <Button type="text" icon={<MenuOutlined />} onClick={showDrawer} />
-        <Drawer
-          title="Menu"
-          placement="right"
-          onClose={onClose}
-          visible={visible}
-        >
-          <Menu mode="vertical" onClick={handleMenuClick}>
-            <Menu.Item key="hero">Home</Menu.Item>
-            <Menu.Item key="features">Features</Menu.Item>
-            <Menu.Item key="screenshots">Screenshots</Menu.Item>
-            <Menu.Item key="footer">Contact</Menu.Item>
-          </Menu>
-        </Drawer>
+      <div className="toolbar-buttons hidden md:flex space-x-4">
+        <button className="cta-button">Home</button>
+        <button className="cta-button">Features</button>
+        <button className="cta-button">Screenshots</button>
+        <button className="cta-button">Reviews</button>
+        {/* Add more buttons as needed */}
       </div>
-      <ThemeSwitcher />
-    </header>
+      <div className="hidden md:flex">
+        <ThemeSwitcher />
+      </div>
+      <div className="md:hidden">
+        <button onClick={toggleMobileMenu} className="focus:outline-none">
+          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+      </div>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-md flex flex-col items-center space-y-4 py-4 md:hidden">
+          <button className="cta-button">Home</button>
+          <button className="cta-button">Features</button>
+          <button className="cta-button">Screenshots</button>
+          <button className="cta-button">Reviews</button>
+          <ThemeSwitcher />
+        </div>
+      )}
+    </div>
   );
-}
+};
 
 export default Toolbar;

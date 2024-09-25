@@ -1,92 +1,95 @@
 /* src/components/Toolbar.css */
 
-.toolbar {
-  background: transparent;
-  color: #FFF8E1;
-  box-shadow: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  transition: background-color 0.3s ease;
-}
-.toolbar.visible {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-/* Logo Styling */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #FFF8E1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.toolbar.visible .logo {
-  opacity: 1;
-}
-
-.toolbar-logo {
-  width: 40px;
-  height: auto;
-  margin-right: 10px;
-}
-
-/* Desktop Menu */
-.desktop-menu {
-  display: none;
-}
-
-/* Mobile Menu Button */
-.mobile-menu {
-  display: block;
-}
-
-/* Media Queries for Responsive Design */
-@media (min-width: 768px) {
-  .desktop-menu {
-    display: block;
+/* ================================
+   Toolbar Container
+   ================================ */
+   .toolbar {
+    @apply fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md;
   }
+  
+  /* ================================
+     Logo Styling
+     ================================ */
+  .logo img {
+    @apply h-8;
+  }
+  
+  /* ================================
+     Toolbar Buttons (Desktop)
+     ================================ */
+  .toolbar-buttons {
+    @apply hidden md:flex space-x-4;
+  }
+  
+  .toolbar-buttons .cta-button {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition duration-300;
+  }
+  
+  /* ================================
+     Dark Mode/Light Mode Toggle (Desktop)
+     ================================ */
+  .theme-switcher-container {
+    @apply hidden md:flex;
+  }
+  
+  .theme-switcher-container button {
+    @apply p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 focus:outline-none;
+  }
+  
+  /* ================================
+     Hamburger Menu Button (Mobile)
+     ================================ */
+  .hamburger-button {
+    @apply md:hidden flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300 focus:outline-none;
+  }
+  
+  /* ================================
+     Mobile Menu
+     ================================ */
   .mobile-menu {
-    display: none;
+    @apply absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-md flex flex-col items-center space-y-4 py-4 md:hidden;
   }
-}
-
-/* Ant Design Menu Customizations */
-.nav-menu {
-  background: transparent !important;
-  border-bottom: none !important;
-}
-
-.ant-menu-horizontal {
-  border-bottom: none !important;
-}
-
-.ant-menu-item {
-  background: transparent !important;
-}
-
-.toolbar .ant-menu-item a {
-  color: var(--color-text);
-}
-
-.toolbar .ant-menu-item-selected a {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.toolbar .ant-menu-item:hover a {
-  color: var(--color-secondary);
-}
-
-.ant-menu-item:hover a {
-  color: #FFD700 !important;
-}
+  
+  .mobile-menu .cta-button {
+    @apply w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition duration-300;
+  }
+  
+  /* ================================
+     Dark Mode Styling
+     ================================ */
+  /* Assuming you have defined --color-primary and --color-primary-dark in your Tailwind config or CSS variables */
+  :root {
+    --color-primary: #FF5722;
+    --color-primary-dark: #E64A19;
+  }
+  
+  .dark {
+    /* You can add any additional dark mode styles here if necessary */
+  }
+  
+  /* ================================
+     Responsive Adjustments
+     ================================ */
+  @media (max-width: 768px) {
+    /* Ensure the toolbar does not cause horizontal overflow on small screens */
+    .toolbar {
+      @apply px-4 py-3;
+    }
+  
+    .toolbar-buttons {
+      @apply hidden;
+    }
+  
+    .theme-switcher-container {
+      @apply hidden;
+    }
+  
+    .hamburger-button {
+      @apply block;
+    }
+  
+    /* Mobile menu animations (optional) */
+    .mobile-menu {
+      @apply transition-all duration-300 ease-in-out;
+    }
+  }
