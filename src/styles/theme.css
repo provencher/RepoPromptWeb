@@ -1,37 +1,42 @@
 /* src/styles/theme.css */
 
 :root {
-  --color-primary: #FF8A65;          /* Updated primary color */
-  --color-secondary: #42A5F5;        /* Updated secondary color */
-  --color-accent: #0078D4;           /* New accent color */
-  --color-accent-light: #80D8FF;     /* Alternative accent color */
-  --color-background: #FFF5EC;       /* Soft cream for light mode */
-  --color-text: #3D2B00;             /* Deep brown for light mode */
+  --color-primary: #EED5BA;          /* Light mode primary color */
+  --color-secondary: #42A5F5;        /* Secondary color */
+  --color-accent: #0078D4;           /* Accent color */
+  --color-accent-light: #80D8FF;     /* Light accent color */
+  --color-background: #FFF5EC;       /* Light mode background */
+  --color-text: #3D2B00;             /* Light mode text */
+  /* Shadow variables */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+               0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+               0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Toolbar Scrolled Background */
-  --toolbar-scrolled-bg-color: rgba(255, 138, 101, 0.1); /* Updated to match new primary color */
+  --toolbar-scrolled-bg-color: rgba(238, 213, 186, 0.1); /* Adjusted for light mode */
 }
 
 body.dark {
-  --color-primary: #FF8A65;           /* Consistent primary color in dark mode */
-  --color-secondary: #42A5F5;         /* Consistent secondary color in dark mode */
+  --color-primary: #2E3640;           /* Dark mode primary color */
+  --color-secondary: #42A5F5;         /* Secondary color remains the same */
   --color-accent: #80D8FF;            /* Updated accent color for dark mode */
   --color-accent-light: #80D8FF;      /* Consistent accent color */
-  --color-background: #1E1E1E;        /* Dark gray for dark mode */
-  --color-text: #E0E0E0;              /* Off-white for dark mode */
+  --color-background: #2E3640;        /* Dark mode background */
+  --color-text: #E0E0E0;              /* Dark mode text */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 
+               0 2px 4px -1px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 
+               0 4px 6px -2px rgba(255, 255, 255, 0.05);
 
   /* Toolbar Scrolled Background for Dark Mode */
-  --toolbar-scrolled-bg-color: rgba(30, 30, 30, 0.8);
+  --toolbar-scrolled-bg-color: rgba(46, 54, 64, 0.8);
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

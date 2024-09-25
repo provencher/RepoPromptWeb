@@ -1,25 +1,34 @@
 /* src/components/ThemeSwitcher.css */
 
-.theme-switcher {
-    background: none; /* No background */
-    border: none; /* No border */
+/* ================================
+   Theme Switcher Button Styles
+   ================================ */
+   .theme-switcher {
+    background: transparent; /* No background */
+    border: 2px solid var(--color-primary); /* Clear border for clean edges */
     cursor: pointer; /* Pointer cursor on hover */
     font-size: 1.5rem; /* Icon size */
     padding: 0.5rem; /* Padding around the icon */
     margin-left: 1rem; /* Spacing from other elements */
-    border-radius: 50%; /* Circular button (optional) */
-    transition: filter 0.3s ease; /* Smooth transition for filter */
-    filter: grayscale(100%); /* Grayscale by default */
-    color: var(--color-text, #3D2B00); /* Default icon color */
+    border-radius: 4px; /* Slightly rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    color: var(--color-text); /* Default icon color */
   }
   
   .theme-switcher:hover {
-    filter: grayscale(0%); /* Remove grayscale on hover to show colors */
+    background-color: var(--color-primary); /* Subtle background on hover */
+    color: #ffffff; /* Change icon color on hover for contrast */
   }
   
   @media (max-width: 768px) {
-    /* Ensure the theme switcher inside the drawer is visible */
+    /* Ensure the theme switcher inside the drawer is visible and consistent */
     .drawer-theme-switcher .theme-switcher {
-      filter: grayscale(0%);
+      border: 2px solid var(--color-primary); /* Clear border */
+      color: var(--color-text); /* Consistent icon color */
+    }
+  
+    .drawer-theme-switcher .theme-switcher:hover {
+      background-color: var(--color-primary); /* Subtle background on hover */
+      color: #ffffff; /* Change icon color on hover for contrast */
     }
   }

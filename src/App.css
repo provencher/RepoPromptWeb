@@ -10,6 +10,9 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .App {
@@ -25,56 +28,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--color-background); /* Updated to use CSS variable */
+    background: var(--color-background); /* Uses CSS variable */
     color: var(--color-text);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
     overflow-x: hidden;
-  }
-  
-  /* Optional: If you have specific styles for sections, ensure they don't interfere with the footer */
-  section {
-    padding: 2rem 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    margin-bottom: 1rem;
-  }
-  
-  a {
-    color: var(--color-accent);
-    transition: color 0.3s;
   }
   
   /* ================================
      Buttons
      ================================ */
-  .cta-button {
+  .cta-button,
+  .testflight-button {
     display: inline-block;
-    background-color: var(--color-primary);
-    color: white;
+    background-color: transparent; /* Removed heavy fill */
+    color: var(--color-primary); /* Use primary color for text */
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 12px;
+    border: 2px solid var(--color-primary); /* Clear border for clean edges */
+    border-radius: 4px; /* Slightly rounded edges for a clean look */
     font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: var(--shadow-md);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
   }
   
-  .cta-button:hover {
-    background: linear-gradient(to bottom, #FF8A65, #FFB74D); /* Updated gradient */
-    box-shadow: var(--shadow-lg);
+  .cta-button:hover,
+  .testflight-button:hover {
+    background-color: var(--color-primary); /* Solid fill on hover */
+    color: var(--color-background); /* Text color switches to background for contrast */
+    border-color: var(--color-primary); /* Maintain border color */
   }
   
   /* ================================
      Dark Theme
      ================================ */
   body.dark {
-    background: linear-gradient(to bottom, #1E1E1E, #121212);
+    background-color: var(--color-background);
     color: var(--color-text);
   }
   
@@ -95,23 +84,15 @@
     color: #ffffff;
   }
   
-  body.dark .cta-button {
-    background-color: var(--color-accent);
+  body.dark .cta-button,
+  body.dark .testflight-button {
+    color: var(--color-background); /* Adjust text color for dark mode */
   }
   
-  body.dark .cta-button:hover {
-    background: linear-gradient(to bottom, #80D8FF, #42A5F5); /* Updated hover gradient */
-  }
-  
-  body.dark .feature-item,
-  body.dark .step {
-    background-color: #262626;
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  }
-  
-  body.dark a {
-    color: var(--color-accent-light);
+  body.dark .cta-button:hover,
+  body.dark .testflight-button:hover {
+    background-color: var(--color-primary); /* Solid primary color on hover */
+    color: var(--color-background); /* Maintain contrast */
   }
   
   /* ================================
@@ -134,20 +115,38 @@
     padding: 0 1rem;
   }
   
-  .features::after,
-  .screenshots::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, rgba(255, 138, 101, 0.5), rgba(66, 165, 245, 0.5)); /* Updated gradient */
+  /* ================================
+     Removed Section Separators
+     ================================ */
+  /* The section separators have been removed for a cleaner, continuous layout */
+  
+  /* ================================
+     General Section Styles
+     ================================ */
+  section {
+    padding: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   
-  .features::after {
-    bottom: 0;
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 1rem;
   }
   
-  .screenshots::before {
-    top: 0;
+  a {
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+    text-decoration: none;
   }
+  
+  a:hover {
+    color: var(--color-accent); /* Enhanced hover effect for links */
+  }
+  
+  /* ================================
+     Footer Text Visibility
+     ================================ */
+  /* Assuming Footer.css handles specific footer styles, ensure contrast here if needed */
+  /* If footer text is within main or other sections, ensure it's using the correct color variables */

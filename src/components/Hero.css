@@ -54,43 +54,24 @@ section#hero {
   text-align: center;
 }
 
-.cta-button {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  background-color: var(--color-primary); /* Updated to use CSS variable */
-  color: white;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  box-shadow: var(--shadow-md);
-}
-
-.cta-button:hover {
-  background: linear-gradient(to bottom, #FF8A65, #FFB74D); /* Updated gradient */
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
-
+.cta-button,
 .testflight-button {
-  background: linear-gradient(45deg, var(--color-primary), #FFB74D); /* Updated gradient */
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  box-shadow: var(--shadow-md);
-  font-weight: bold;
   display: inline-block;
+  background-color: transparent; /* Removed heavy fill */
+  color: var(--color-primary); /* Use primary color for text */
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
+  border: 2px solid var(--color-primary); /* Added clear border */
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
+.cta-button:hover,
 .testflight-button:hover {
-  background: linear-gradient(45deg, #FFB74D, #FFCC80); /* Updated hover gradient */
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  background-color: var(--color-primary); /* Solid fill on hover */
+  color: var(--color-background); /* Text color switches to background for contrast */
+  border-color: var(--color-primary); /* Maintain border color */
 }
 
 /* Dark theme styles */
@@ -113,13 +94,13 @@ body.dark .hero p {
 
 body.dark .cta-button,
 body.dark .testflight-button {
-  background: linear-gradient(45deg, var(--color-primary), #FFB74D); /* Updated gradient for dark mode */
-  color: #ffffff;
+  color: var(--color-background); /* Adjust text color for dark mode */
 }
 
 body.dark .cta-button:hover,
 body.dark .testflight-button:hover {
-  background: linear-gradient(45deg, #FFB74D, #FFCC80); /* Updated hover gradient for dark mode */
+  background-color: var(--color-primary); /* Solid primary color on hover */
+  color: var(--color-background); /* Maintain contrast */
 }
 
 /* Responsive adjustments */
