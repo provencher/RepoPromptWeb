@@ -10,6 +10,9 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .App {
@@ -21,97 +24,63 @@
   }
   
   main {
-    flex: 1; /* Allows main to grow and take up available space */
+    flex: 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #EED5BA;
+    background: var(--color-background);
     color: var(--color-text);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
     overflow-x: hidden;
-  }
-  
-  /* Optional: If you have specific styles for sections, ensure they don't interfere with the footer */
-  section {
-    padding: 2rem 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    margin-bottom: 1rem;
-  }
-  
-  a {
-    color: var(--color-accent);
-    transition: color 0.3s;
   }
   
   /* ================================
      Buttons
      ================================ */
-  .cta-button {
+  .cta-button,
+  .testflight-button {
     display: inline-block;
-    background-color: var(--color-primary, #FF5722);
-    color: white;
+    background-color: transparent;
+    color: var(--color-text);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border-radius: 12px;
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
     font-weight: bold;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
   }
   
-  .cta-button:hover {
-    background: linear-gradient(to bottom, #FFA726, #FFCC80);
-    box-shadow: var(--shadow-lg, 0 6px 8px rgba(0, 0, 0, 0.15));
+  .cta-button:hover,
+  .testflight-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
   }
   
   /* ================================
      Dark Theme
      ================================ */
   body.dark {
-    background: linear-gradient(to bottom, #121212, #1e1e1e);
-    color: #E0E0E0;
+    background-color: var(--color-background);
+    color: var(--color-text);
   }
-  
-  /* Removed conflicting dark mode styles for the toolbar */
-  /* 
-  body.dark .toolbar,
-  body.dark .hero,
-  body.dark .features,
-  body.dark .screenshots,
-  body.dark .footer {
-    background-color: #1e1e1e;
-    color: #ffffff;
-  }
-  */
   
   body.dark .how-it-works {
     background-color: #262626;
     color: #ffffff;
   }
   
-  body.dark .cta-button {
-    background-color: #0078d4;
+  body.dark .cta-button,
+  body.dark .testflight-button {
+    color: var(--color-background);
   }
   
-  body.dark .cta-button:hover {
-    background-color: #005a9e;
-  }
-  
-  body.dark .feature-item,
-  body.dark .step {
-    background-color: #262626;
-    color: #ffffff;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  }
-  
-  body.dark a {
-    color: #4db6ff;
+  body.dark .cta-button:hover,
+  body.dark .testflight-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
   }
   
   /* ================================
@@ -134,20 +103,27 @@
     padding: 0 1rem;
   }
   
-  .features::after,
-  .screenshots::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, rgba(255, 87, 34, 0.5), rgba(255, 165, 0, 0.5));
+  /* ================================
+     General Section Styles
+     ================================ */
+  section {
+    padding: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   
-  .features::after {
-    bottom: 0;
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 1rem;
   }
   
-  .screenshots::before {
-    top: 0;
+  a {
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--color-accent);
   }

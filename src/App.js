@@ -1,5 +1,6 @@
 // src/App.js
 
+
 import React, { useRef, useState, useEffect } from 'react';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
@@ -9,8 +10,8 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  // State to manage theme (light/dark)
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const screenshotsRef = useRef(null);
 
   // On component mount, check localStorage for theme preference
   useEffect(() => {
@@ -36,12 +37,18 @@ function App() {
     });
   };
 
+  const handleFeatureClick = (index) => {
+    if (screenshotsRef.current) {
+      screenshotsRef.current.goTo(index);
+    }
+  };
+
   return (
     <div className="App">
       <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
-      <Features />
-      <Screenshots />
+      <Features onFeatureClick={handleFeatureClick} />
+      <Screenshots ref={screenshotsRef} />
       <Footer />
     </div>
   );

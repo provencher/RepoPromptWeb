@@ -1,8 +1,19 @@
+/* src/components/Footer.css */
 .footer {
-  background: linear-gradient(to bottom, #F28C38, #D84725);
-  color: #FFFFFF;
+  background: rgba(238, 213, 186, 0.1); /* Semi-transparent primary color background */
+  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  color: var(--color-text); /* Updated text color for light mode */
   padding: 0.75rem 0;
   width: 100%;
   text-align: center;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  border-top: 1px solid rgba(238, 213, 186, 0.2); /* Subtle top border */
+}
+
+body.dark .footer {
+  background: rgba(46, 54, 64, 0.2); /* Semi-transparent dark mode background */
+  color: #E0E0E0; /* Adjust text color for dark mode */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border for dark mode */
 }
