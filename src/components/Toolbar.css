@@ -28,10 +28,10 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
-.toolbar.scrolled .logo-title {
+.logo-title.scrolled {
   opacity: 1;
 }
 
@@ -128,6 +128,11 @@
   }
 
   .logo-title {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .logo-title.scrolled {
     opacity: 1;
   }
 
