@@ -1,26 +1,25 @@
+// tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
   ],
-  purge: {
-    enabled: true,
-    content: [
-      "./src/**/*.{js,jsx,ts,tsx}",
-      "./public/index.html",
-    ],
-  },
   theme: {
     extend: {
-      screens: {
-        'xs': '480px',
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
+      colors: {
+        primary: '#EED5BA',        // Updated primary color for light mode
+        background: {
+          light: '#EED5BA',        // Changed from '#FFF5EC' to primary color
+          dark: '#2E3640',         // Updated primary color for dark mode
+        },
+        text: {
+          light: '#3D2B00',        // Deep brown for light mode
+          dark: '#E0E0E0',         // Off-white for dark mode
+        },
+        // Removed secondary, accent, and other colors to simplify the palette
       },
     },
+    darkMode: 'class', // Ensure dark mode is enabled via class
   },
   plugins: [],
-}
+};

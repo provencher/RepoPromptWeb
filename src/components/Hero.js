@@ -5,13 +5,13 @@ import './Hero.css';
 
 function Hero() {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="hero-content">
         <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="hero-logo" />
         <h1>Repo Prompt</h1>
         <p>
-          Manage your repositories efficiently with AI-assisted code changes. Seamlessly integrate, modify, and review your projects with ease.
-        </p>
+          A macOS native app designed to remove all the friction involved in iterating on your local files with the most powerful language models       
+        </p>      
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSc6_MPoiCtlJ8vdCZ_w6Mg2yC7CI7RtlMNinG82nbM14dJ9Dg/viewform"
           className="cta-button testflight-button"

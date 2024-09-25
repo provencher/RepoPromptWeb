@@ -4,7 +4,7 @@ import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { Carousel } from 'antd';
 import './Screenshots.css';
 
-const Screenshots = forwardRef((props, ref) => {
+const Screenshots = forwardRef(({ isDarkMode }, ref) => {
   const carouselRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
@@ -15,20 +15,29 @@ const Screenshots = forwardRef((props, ref) => {
     },
   }));
 
-  return (
-    <div className="screenshots">
-      <Carousel ref={carouselRef} autoplay>
-        <div className="screenshot-item">
-          <img src="/images/compose-light.png" alt="Compose feature interface showing file selection and context setting" />
-        </div>
-        <div className="screenshot-item">
-          <img src="/images/chat-light.png" alt="Chat interface demonstrating AI conversation about selected files" />
-        </div>
-        <div className="screenshot-item">
-          <img src="/images/review-light.png" alt="Review interface displaying changes made to files by AI" />
-        </div>
-      </Carousel>
-    </div>
+return (
+      <div className="screenshots">
+        <Carousel ref={carouselRef} autoplay>
+          <div className="screenshot-item">
+            <img
+              src={isDarkMode ? "/images/compose-dark.png" : "/images/compose-light.png"}
+              alt="Compose feature interface showing file selection and context setting"
+            />
+          </div>
+          <div className="screenshot-item">
+            <img
+              src={isDarkMode ? "/images/chat-dark.png" : "/images/chat-light.png"}
+              alt="Chat interface demonstrating AI conversation about selected files"
+            />
+          </div>
+          <div className="screenshot-item">
+            <img
+              src={isDarkMode ? "/images/review-dark.png" : "/images/review-light.png"}
+              alt="Review interface displaying changes made to files by AI"
+            />
+          </div>
+        </Carousel>
+      </div>
   );
 });
 

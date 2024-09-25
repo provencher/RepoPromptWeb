@@ -1,33 +1,56 @@
 // src/App.js
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
+import Demo from './components/Demo'; // Import Demo component
 import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  // Create a reference to the Screenshots carousel
-  const carouselRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const screenshotsRef = useRef(null);
 
-  // Handler to navigate to a specific slide
+  // On component mount, check localStorage for theme preference
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('isDarkMode');
+    if (savedTheme === 'true') {
+      setIsDarkMode(true);
+      document.body.classList.add('dark');
+    }
+  }, []);
+
+  // Function to toggle theme
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      if (newMode) {
+        document.body.classList.add('dark');
+        localStorage.setItem('isDarkMode', 'true');
+      } else {
+        document.body.classList.remove('dark');
+        localStorage.setItem('isDarkMode', 'false');
+      }
+      return newMode;
+    });
+  };
+
   const handleFeatureClick = (index) => {
-    if (carouselRef.current) {
-      carouselRef.current.goTo(index, false); // false for animated transition
+    if (screenshotsRef.current) {
+      screenshotsRef.current.goTo(index, true);
     }
   };
 
   return (
     <div className="App">
-      <Toolbar />
+      <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
-      {/* Pass the handler to Features */}
+      <Demo /> {/* Moved Demo component above Features */}
       <Features onFeatureClick={handleFeatureClick} />
-      {/* Attach the ref to Screenshots */}
-      <Screenshots ref={carouselRef} />
-      <Footer />     
+      <Screenshots ref={screenshotsRef} isDarkMode={isDarkMode} />
+      <Footer />
     </div>
   );
 }

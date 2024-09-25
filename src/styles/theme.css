@@ -1,21 +1,42 @@
+/* src/styles/theme.css */
+
 :root {
-  --color-primary: #FF5722;
-  --color-secondary: #FFA500;
-  --color-background: #FFFDD0;
-  --color-text: #3D2B00;
-  --color-accent: #0056b3;
+  --color-primary: #EED5BA;          /* Light mode primary color */
+  --color-secondary: #42A5F5;        /* Secondary color */
+  --color-accent: #0078D4;           /* Accent color */
+  --color-accent-light: #80D8FF;     /* Light accent color */
+  --color-background: #EED5BA;       /* Updated light mode background to primary color */
+  --color-text: #3D2B00;             /* Light mode text */
+  /* Shadow variables */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+               0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+               0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Toolbar Scrolled Background */
+  --toolbar-scrolled-bg-color: rgba(238, 213, 186, 0.1); /* Adjusted for light mode */
 }
 
 body.dark {
-  --color-primary: #FF7043;
-  --color-secondary: #FFB300;
-  --color-background: #121212;
-  --color-text: #E0E0E0;
-  --color-accent: #6ab0ff;
+  --color-primary: #2E3640;           /* Dark mode primary color */
+  --color-secondary: #42A5F5;         /* Secondary color remains the same */
+  --color-accent: #80D8FF;            /* Updated accent color for dark mode */
+  --color-accent-light: #80D8FF;      /* Consistent accent color */
+  --color-background: #2E3640;        /* Dark mode background */
+  --color-text: #E0E0E0;              /* Dark mode text */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 
+               0 2px 4px -1px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 
+               0 4px 6px -2px rgba(255, 255, 255, 0.05);
+
+  /* Toolbar Scrolled Background for Dark Mode */
+  --toolbar-scrolled-bg-color: rgba(46, 54, 64, 0.8);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
