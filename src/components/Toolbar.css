@@ -6,21 +6,43 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: opacity 0.5s ease-in-out, background-color 0.3s ease, color 0.1s ease;
+  background-color: transparent; /* Initially transparent */
+  transition: background-color 0.5s ease, padding 0.3s ease;
+  padding: 1rem 2rem; /* Initial padding */
+}
+
+.toolbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Light mode background when scrolled */
+}
+
+.toolbar.dark.scrolled {
+  background-color: rgba(30, 30, 30, 0.9); /* Dark mode background when scrolled */
 }
 
 .toolbar-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: center; /* Center navigation links */
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .logo-title {
+  position: absolute;
+  left: 2rem;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.logo-title.visible {
+  opacity: 1;
+}
+
+.logo-title.hidden {
+  opacity: 0;
 }
 
 .logo {
@@ -33,6 +55,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
+  color: var(--color-text, #3D2B00);
 }
 
 .nav-items {
@@ -40,20 +63,17 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  gap: 1.5rem;
 }
 
-.nav-items li {
-  margin: 0 1rem;
-}
-
-.nav-items a {
+.nav-items li a {
   color: inherit;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.nav-items a:hover {
+.nav-items li a:hover {
   color: var(--color-primary, #FF5722);
 }
 
@@ -62,8 +82,11 @@
   align-items: center;
 }
 
-.theme-switcher {
-  /* Ensure the theme switcher is hidden on mobile */
+/* Hide ThemeSwitcher on mobile via CSS */
+@media (max-width: 768px) {
+  .theme-and-hamburger .theme-switcher {
+    display: none;
+  }
 }
 
 .hamburger-button {
@@ -73,63 +96,46 @@
   cursor: pointer;
   margin-left: 1rem;
   padding: 0;
-}
-
-.toolbar.dark {
-  color: #ffffff;
-}
-
-.toolbar.dark .nav-items a {
-  color: #ffffff;
+  color: inherit;
 }
 
 @media (max-width: 768px) {
-  .toolbar-content {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 1rem;
+  .hamburger-button {
+    display: block; /* Show hamburger button on mobile */
   }
 
   .nav-items {
     display: none; /* Hide navigation items on mobile */
   }
+}
 
-  .theme-switcher {
-    display: none; /* Hide theme switcher on mobile */
-  }
+/* Drawer Navigation Styles */
+.drawer-nav-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-  .hamburger-button {
-    display: block; /* Show hamburger button on mobile */
-    color: inherit;
-  }
+.drawer-nav-items li {
+  margin: 1rem 0;
+}
 
-  .drawer-nav-items {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
+.drawer-nav-items a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
 
-  .drawer-nav-items li {
-    margin: 1rem 0;
-  }
+.drawer-nav-items a:hover {
+  color: var(--color-primary, #FF5722);
+}
 
-  .drawer-nav-items a {
-    color: inherit;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-
-  .drawer-nav-items a:hover {
-    color: var(--color-primary, #FF5722);
-  }
-
-  .drawer-theme-switcher {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-  }
+.drawer-theme-switcher {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }

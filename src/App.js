@@ -9,9 +9,6 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  // Create a reference to the Screenshots carousel
-  const carouselRef = useRef(null);
-
   // State to manage theme (light/dark)
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -39,21 +36,12 @@ function App() {
     });
   };
 
-  // Handler to navigate to a specific slide
-  const handleFeatureClick = (index) => {
-    if (carouselRef.current) {
-      carouselRef.current.goTo(index, false); // false for animated transition
-    }
-  };
-
   return (
     <div className="App">
       <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
-      {/* Pass the handler to Features */}
-      <Features onFeatureClick={handleFeatureClick} />
-      {/* Attach the ref to Screenshots */}
-      <Screenshots ref={carouselRef} />
+      <Features />
+      <Screenshots />
       <Footer />
     </div>
   );
