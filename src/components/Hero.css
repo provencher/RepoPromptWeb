@@ -18,7 +18,7 @@ section#hero {
   max-width: 100%;
   margin: 0;
   padding: 2rem 1rem;
-  background-color: #FFF5EC; /* Updated to soft cream for light mode */
+  background-color: var(--color-background); /* Updated to use CSS variable */
 }
 
 .hero-content {
@@ -70,7 +70,7 @@ section#hero {
 }
 
 .cta-button:hover {
-  background: linear-gradient(to bottom, #FF7043, #FFB74D); /* Updated gradient */
+  background: linear-gradient(to bottom, #FF8A65, #FFB74D); /* Updated gradient */
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }

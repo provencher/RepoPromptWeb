@@ -11,7 +11,6 @@
   padding: 1rem 2rem; /* Initial padding */
 }
 
-/* Semi-transparent background when scrolled using CSS variable */
 .toolbar.scrolled {
   background-color: var(--toolbar-scrolled-bg-color); /* Updated via CSS variable */
   backdrop-filter: blur(10px);

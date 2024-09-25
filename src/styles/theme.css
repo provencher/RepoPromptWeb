@@ -1,10 +1,10 @@
 /* src/styles/theme.css */
 
 :root {
-  --color-primary: #FF7043;          /* Updated primary color */
-  --color-secondary: #FFA500;
+  --color-primary: #FF8A65;          /* Updated primary color */
+  --color-secondary: #42A5F5;        /* Updated secondary color */
   --color-accent: #0078D4;           /* New accent color */
-  --color-accent-light: #6AB0FF;     /* Alternative accent color */
+  --color-accent-light: #80D8FF;     /* Alternative accent color */
   --color-background: #FFF5EC;       /* Soft cream for light mode */
   --color-text: #3D2B00;             /* Deep brown for light mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -12,16 +12,16 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   /* Toolbar Scrolled Background */
-  --toolbar-scrolled-bg-color: rgba(255, 112, 67, 0.1);
+  --toolbar-scrolled-bg-color: rgba(255, 138, 101, 0.1); /* Updated to match new primary color */
 }
 
 body.dark {
-  --color-primary: #FF7043;           /* Consistent primary color in dark mode */
-  --color-secondary: #FFB300;
-  --color-accent: #6AB0FF;            /* Updated accent color for dark mode */
-  --color-accent-light: #6AB0FF;      /* Consistent accent color */
-  --color-background: #121212;         /* Deep gray for dark mode */
-  --color-text: #E0E0E0;               /* Off-white for dark mode */
+  --color-primary: #FF8A65;           /* Consistent primary color in dark mode */
+  --color-secondary: #42A5F5;         /* Consistent secondary color in dark mode */
+  --color-accent: #80D8FF;            /* Updated accent color for dark mode */
+  --color-accent-light: #80D8FF;      /* Consistent accent color */
+  --color-background: #1E1E1E;        /* Dark gray for dark mode */
+  --color-text: #E0E0E0;              /* Off-white for dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
