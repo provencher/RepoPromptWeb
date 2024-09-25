@@ -4,7 +4,7 @@
    Features Section Styles
    ================================ */
    .features {
-    color: var(--color-text);   /* Text color for light mode */
+    color: var(--color-text);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,18 +29,19 @@
     display: flex;
     justify-content: center;
   }
-  
+
   .feature-card {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #FFF8E1; /* Solid card background */
-    border: 1px solid var(--color-accent); /* Clear border */
-    border-radius: 8px; /* Rounded edges for a clean look */
+    background-color: var(--color-background); /* Use background color variable */
+    border: 1px solid var(--color-primary); /* Use primary color for border */
+    border-radius: 8px;
     box-shadow: var(--shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     width: 100%;
   }
+  
   
   .feature-card:hover {
     transform: translateY(-5px);
@@ -52,59 +53,56 @@
     border-bottom: none;
   }
   
+  
   .feature-card .ant-card-head-title {
-    color: var(--color-primary); /* Primary color for titles */
+    color: var(--color-text);
     font-weight: 600;
     font-size: 1.5rem;
   }
   
   .feature-card .ant-card-body {
     padding: 1rem;
-    color: var(--color-text); /* Text color for card body */
+    color: var(--color-text);
     flex-grow: 1;
   }
   
   body.dark .features {
-    color: var(--color-text);   /* Text color for dark mode */
+    color: var(--color-text);
   }
   
   body.dark .feature-card {
-    border: 1px solid var(--color-accent-light); /* Clear border for dark mode */
+    background-color: var(--color-background);
+    border: 1px solid var(--color-primary);
   }
   
   body.dark .feature-card .ant-card-head-title {
-    color: var(--color-primary); /* Consistent primary color in dark mode */
+    color: var(--color-text);
   }
   
   @media (max-width: 768px) {
     .features {
-        padding: 1.5rem 0;
+      padding: 1.5rem 0;
     }
   
     .feature-card .ant-card-head-title {
-        font-size: 1.3rem;
+      font-size: 1.3rem;
     }
   
     .feature-card .ant-card-body {
-        padding: 0.75rem;
+      padding: 0.75rem;
     }
   }
   
   @media (max-width: 480px) {
     .features {
-        padding: 1rem 0;
+      padding: 1rem 0;
     }
   
     .feature-card .ant-card-head-title {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
   
     .feature-card .ant-card-body {
-        padding: 0.5rem;
+      padding: 0.5rem;
     }
   }
-  
-  /* ================================
-     Removed Section Separators
-     ================================ */
-  /* The section separators have been removed for a cleaner layout */

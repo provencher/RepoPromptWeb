@@ -6,13 +6,13 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(238, 213, 186, 0); /* Initial opacity set to 0 */
+  background-color: rgba(238, 213, 186, 0); /* Initial transparent background */
   transition: background-color 0.3s ease, padding 0.3s ease;
-  padding: 1rem 2rem; /* Initial padding */
+  padding: 1rem 2rem;
 }
 
 .toolbar.scrolled {
-  background-color: var(--toolbar-scrolled-bg-color); /* Primary color with opacity */
+  background-color: var(--toolbar-scrolled-bg-color);
   backdrop-filter: blur(10px);
 }
 
@@ -20,7 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -28,12 +27,12 @@
 .logo-title {
   display: flex;
   align-items: center;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .toolbar.scrolled .logo-title {
-  opacity: 1; /* Fully visible when scrolled */
+  opacity: 1;
 }
 
 .logo {
@@ -46,10 +45,9 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
-  color: var(--color-text); /* Updated to use CSS variable */
+  color: var(--color-text);
 }
 
-/* Wrapper for absolutely centered nav-items */
 .nav-items-container {
   position: absolute;
   left: 50%;
@@ -65,14 +63,14 @@
 }
 
 .nav-items li a {
-  color: inherit;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .nav-items li a:hover {
-  color: var(--color-primary); /* Updated to use primary color */
+  color: var(--color-primary);
 }
 
 .theme-and-hamburger {
@@ -80,53 +78,21 @@
   align-items: center;
 }
 
-/* Hide ThemeSwitcher on mobile via CSS */
-@media (max-width: 768px) {
-  .theme-and-hamburger .theme-switcher {
-    display: none;
-  }
-
-  /* Reorder elements on mobile */
-  .logo-title {
-    order: 1; /* Logo title first */
-  }
-
-  .theme-and-hamburger {
-    order: 2; /* Theme and other elements next */
-  }
-
-  .hamburger-button {
-    order: 3; /* Hamburger button last */
-  }
-}
-
 .hamburger-button {
-  display: none; /* Hidden by default */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 1rem;
-  padding: 0;
-  color: inherit;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .hamburger-button {
-    display: block; /* Show hamburger button on mobile */
-  }
-
-  .nav-items {
-    display: none; /* Hide navigation items on mobile */
-  }
-}
-
-/* Drawer Navigation Styles */
+/* Drawer styles */
 .drawer-nav-items {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .drawer-nav-items li {
@@ -134,7 +100,7 @@
 }
 
 .drawer-nav-items a {
-  color: inherit;
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -142,19 +108,54 @@
 }
 
 .drawer-nav-items a:hover {
-  color: var(--color-primary); /* Updated to use primary color */
+  color: var(--color-primary);
 }
 
-/* Position ThemeSwitcher at top-right in Drawer */
 .drawer-theme-switcher {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  display: flex;
-  justify-content: flex-end;
 }
 
-/* Ensure Drawer has relative positioning to position ThemeSwitcher correctly */
-.ant-drawer-body {
-  position: relative;
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-items {
+    display: none;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .theme-switcher {
+    display: none;
+  }
+
+  .toolbar-content {
+    justify-content: space-between;
+  }
+
+  .logo-title {
+    opacity: 1;
+  }
+}
+
+/* Dark mode styles */
+body.dark .toolbar {
+  background-color: rgba(46, 54, 64, 0);
+}
+
+body.dark .toolbar.scrolled {
+  background-color: rgba(46, 54, 64, 0.8);
+}
+
+body.dark .nav-items li a,
+body.dark .drawer-nav-items a,
+body.dark .hamburger-button {
+  color: var(--color-text);
+}
+
+body.dark .nav-items li a:hover,
+body.dark .drawer-nav-items a:hover {
+  color: var(--color-primary);
 }

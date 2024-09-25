@@ -1,13 +1,13 @@
 /* src/components/Screenshots.css */
 
 .screenshots {
-  background-color: var(--color-background); /* Updated to use CSS variable */
-  color: var(--color-text);                /* Updated to use CSS variable */
+  background-color: var(--color-primary);
+  color: var(--color-text);
   padding: 2rem 0 3rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   margin: 0;
-  width: 100%; /* Ensure full width */
+  width: 100%;
 }
 
 .screenshots::before {
@@ -22,7 +22,7 @@
 .screenshot-item img {
   width: 100%;
   height: auto;
-  border: 2px solid var(--color-accent); /* Updated border color */
+  border: 2px solid var(--color-accent);
   border-radius: 8px;
   box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,21 +34,21 @@
 }
 
 .screenshots .slick-dots li button {
-  background-color: var(--color-primary); /* Updated to use primary color */
+  background-color: var(--color-primary);
 }
 
 .screenshots .slick-dots li.slick-active button {
-    background-color: var(--color-accent); /* Updated to use accent color */
+  background-color: var(--color-accent);
 }
 
 .screenshots .ant-carousel {
-  width: 100%; /* Full width for carousel */
-  max-width: none; /* Remove max-width constraint */
+  width: 100%;
+  max-width: none;
   margin: 0;
 }
 
 .screenshots .slick-slide {
-  padding: 0; /* Remove slide padding */
+  padding: 0;
 }
 
 .screenshots .slick-slide > div {
@@ -57,16 +57,16 @@
 
 /* Dark mode styles */
 body.dark .screenshots {
-  background-color: var(--color-background); /* Updated to use CSS variable */
-  color: var(--color-text);                /* Updated to use CSS variable */
+  background-color: var(--color-primary);
+  color: var(--color-text);
 }
 
 body.dark .screenshots::before {
-  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark)); /* Consistent gradient */
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary));
 }
 
 body.dark .screenshot-item img {
-  border-color: var(--color-accent); /* Updated border color for dark mode */
+  border-color: var(--color-accent);
 }
 
 body.dark .screenshots .slick-dots li button {
@@ -74,5 +74,5 @@ body.dark .screenshots .slick-dots li button {
 }
 
 body.dark .screenshots .slick-dots li.slick-active button {
-    background-color: var(--color-accent);
+  background-color: var(--color-accent);
 }

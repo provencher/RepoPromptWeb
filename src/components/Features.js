@@ -1,3 +1,5 @@
+// src/components/Features.js
+
 import React from 'react';
 import { Card, Row, Col } from 'antd';
 import './Features.css';
@@ -18,7 +20,7 @@ function Features({ onFeatureClick }) {
                             title={feature.title}
                             headStyle={{ cursor: 'pointer' }}
                             className="feature-card"
-                            onClick={() => onFeatureClick(feature.index)}
+                            onClick={() => onFeatureClick && onFeatureClick(feature.index)}
                         >
                             <p>{feature.description}</p>
                         </Card>

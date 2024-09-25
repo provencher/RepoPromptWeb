@@ -1,129 +1,133 @@
 /* src/components/Hero.css */
 
-#root, .App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-section#hero {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-}
-
-.hero {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 2rem 1rem;
-  background-color: var(--color-background); /* Updated to use CSS variable */
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-logo {
-  width: 200px;
-  height: auto;
-  margin-bottom: 2rem;
-}
-
-.hero h1 {
-  font-size: 4.5rem;
-  font-weight: 700;
-  color: var(--color-primary); /* Updated to use CSS variable */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: var(--color-text); /* Updated to use CSS variable */
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.cta-button,
-.testflight-button {
-  display: inline-block;
-  background-color: transparent; /* Removed heavy fill */
-  color: var(--color-primary); /* Use primary color for text */
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  border: 2px solid var(--color-primary); /* Added clear border */
-  border-radius: 12px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-.cta-button:hover,
-.testflight-button:hover {
-  background-color: var(--color-primary); /* Solid fill on hover */
-  color: var(--color-background); /* Text color switches to background for contrast */
-  border-color: var(--color-primary); /* Maintain border color */
-}
-
-/* Dark theme styles */
-body.dark .hero {
-  background-color: transparent; /* Removed rectangular background for dark mode */
-  color: var(--color-text);
-}
-
-body.dark .hero-content {
-  background-color: transparent; /* Removed background rectangle */
-}
-
-body.dark .hero h1 {
-  color: var(--color-primary); /* Updated to use CSS variable */
-}
-
-body.dark .hero p {
-  color: var(--color-text); /* Updated to use CSS variable */
-}
-
-body.dark .cta-button,
-body.dark .testflight-button {
-  color: var(--color-background); /* Adjust text color for dark mode */
-}
-
-body.dark .cta-button:hover,
-body.dark .testflight-button:hover {
-  background-color: var(--color-primary); /* Solid primary color on hover */
-  color: var(--color-background); /* Maintain contrast */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 3rem;
+/* ================================
+   Hero Section Styles
+   ================================ */
+   #root, .App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-
+  
+  section#hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem 1rem;
+    background-color: var(--color-primary);
+  }
+  
+  .hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
   .hero p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    text-align: center;
   }
-
-  .hero-content {
-    padding: 1.5rem;
+  
+  .cta-button,
+  .testflight-button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-text);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--color-text); /* Changed to match text color */
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2.5rem;
+  
+  .cta-button:hover,
+  .testflight-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-primary);
+    border-color: var(--color-text);
   }
-
-  .hero-content {
-    padding: 1rem;
+  
+  /* Dark theme styles */
+  body.dark .hero {
+    background-color: var(--color-primary);
+    color: var(--color-text);
   }
-}
+  
+  body.dark .hero-content {
+    background-color: var(--color-primary);
+  }
+  
+  body.dark .hero h1 {
+    color: var(--color-text);
+  }
+  
+  body.dark .hero p {
+    color: var(--color-text);
+  }
+  
+  body.dark .cta-button,
+  body.dark .testflight-button {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+  
+  body.dark .cta-button:hover,
+  body.dark .testflight-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-primary);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .hero-content {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content {
+      padding: 1rem;
+    }
+  }

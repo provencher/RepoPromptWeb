@@ -24,11 +24,11 @@
   }
   
   main {
-    flex: 1; /* Allows main to grow and take up available space */
+    flex: 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--color-background); /* Uses CSS variable */
+    background: var(--color-background);
     color: var(--color-text);
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
@@ -41,12 +41,12 @@
   .cta-button,
   .testflight-button {
     display: inline-block;
-    background-color: transparent; /* Removed heavy fill */
-    color: var(--color-primary); /* Use primary color for text */
+    background-color: transparent;
+    color: var(--color-text);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border: 2px solid var(--color-primary); /* Clear border for clean edges */
-    border-radius: 4px; /* Slightly rounded edges for a clean look */
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
     font-weight: bold;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
@@ -54,9 +54,9 @@
   
   .cta-button:hover,
   .testflight-button:hover {
-    background-color: var(--color-primary); /* Solid fill on hover */
-    color: var(--color-background); /* Text color switches to background for contrast */
-    border-color: var(--color-primary); /* Maintain border color */
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
   }
   
   /* ================================
@@ -67,18 +67,6 @@
     color: var(--color-text);
   }
   
-  /* Removed conflicting dark mode styles for the toolbar */
-  /* 
-  body.dark .toolbar,
-  body.dark .hero,
-  body.dark .features,
-  body.dark .screenshots,
-  body.dark .footer {
-    background-color: #1e1e1e;
-    color: #ffffff;
-  }
-  */
-  
   body.dark .how-it-works {
     background-color: #262626;
     color: #ffffff;
@@ -86,13 +74,13 @@
   
   body.dark .cta-button,
   body.dark .testflight-button {
-    color: var(--color-background); /* Adjust text color for dark mode */
+    color: var(--color-background);
   }
   
   body.dark .cta-button:hover,
   body.dark .testflight-button:hover {
-    background-color: var(--color-primary); /* Solid primary color on hover */
-    color: var(--color-background); /* Maintain contrast */
+    background-color: var(--color-primary);
+    color: var(--color-background);
   }
   
   /* ================================
@@ -116,11 +104,6 @@
   }
   
   /* ================================
-     Removed Section Separators
-     ================================ */
-  /* The section separators have been removed for a cleaner, continuous layout */
-  
-  /* ================================
      General Section Styles
      ================================ */
   section {
@@ -142,11 +125,5 @@
   }
   
   a:hover {
-    color: var(--color-accent); /* Enhanced hover effect for links */
+    color: var(--color-accent);
   }
-  
-  /* ================================
-     Footer Text Visibility
-     ================================ */
-  /* Assuming Footer.css handles specific footer styles, ensure contrast here if needed */
-  /* If footer text is within main or other sections, ensure it's using the correct color variables */

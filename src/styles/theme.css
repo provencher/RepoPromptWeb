@@ -5,7 +5,7 @@
   --color-secondary: #42A5F5;        /* Secondary color */
   --color-accent: #0078D4;           /* Accent color */
   --color-accent-light: #80D8FF;     /* Light accent color */
-  --color-background: #FFF5EC;       /* Light mode background */
+  --color-background: #EED5BA;       /* Updated light mode background to primary color */
   --color-text: #3D2B00;             /* Light mode text */
   /* Shadow variables */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
