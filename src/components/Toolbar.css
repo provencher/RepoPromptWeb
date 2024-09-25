@@ -1,3 +1,5 @@
+/* src/components/Toolbar.css */
+
 .toolbar {
   position: fixed;
   top: 0;
@@ -9,9 +11,9 @@
   padding: 1rem 2rem; /* Initial padding */
 }
 
-/* Semi-transparent background when scrolled */
+/* Semi-transparent background when scrolled using CSS variable */
 .toolbar.scrolled {
-  background-color: rgba(255, 87, 34, 0.1); /* Primary color with 0.8 opacity */
+  background-color: var(--toolbar-scrolled-bg-color);
   backdrop-filter: blur(10px);
 }
 
@@ -149,7 +151,6 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  /* Remove margin-top and align to the top-right */
   display: flex;
   justify-content: flex-end;
 }

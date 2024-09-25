@@ -1,3 +1,5 @@
+// src/components/Toolbar.js
+
 import React, { useState, useEffect } from 'react';
 import './Toolbar.css';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -40,7 +42,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <>
-      <nav className={`toolbar ${isDarkMode ? 'dark' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+      <nav className={`toolbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="toolbar-content">
           {/* Hamburger menu is visible on mobile */}
           <Button

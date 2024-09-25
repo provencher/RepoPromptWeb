@@ -1,3 +1,5 @@
+/* src/App.css */
+
 /* ================================
    Base Styles
    ================================ */
@@ -76,6 +78,8 @@
     color: #E0E0E0;
   }
   
+  /* Removed conflicting dark mode styles for the toolbar */
+  /* 
   body.dark .toolbar,
   body.dark .hero,
   body.dark .features,
@@ -84,6 +88,7 @@
     background-color: #1e1e1e;
     color: #ffffff;
   }
+  */
   
   body.dark .how-it-works {
     background-color: #262626;
