@@ -45,10 +45,10 @@ function App() {
 
   return (
     <div className="App">
-      <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+<Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
       <Features onFeatureClick={handleFeatureClick} />
-      <Screenshots ref={screenshotsRef} />
+      <Screenshots ref={screenshotsRef} isDarkMode={isDarkMode} />
       <Footer />
     </div>
   );
