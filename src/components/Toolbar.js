@@ -38,7 +38,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
             aria-label="Open navigation menu"
           />
 
-          <div className="logo-title">
+          <div className={`logo-title ${isScrolled ? 'scrolled' : ''}`}>
             <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="logo" />
             <h1 className="title">Repo Prompt</h1>
           </div>
