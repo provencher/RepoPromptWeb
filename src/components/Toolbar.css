@@ -1,95 +1,76 @@
-/* src/components/Toolbar.css */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-/* ================================
-   Toolbar Container
-   ================================ */
-   .toolbar {
-    @apply fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md;
+.toolbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-items {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  margin: 0 1rem;
+}
+
+.nav-items a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toolbar.dark {
+  color: #ffffff;
+}
+
+.toolbar.dark .nav-items a {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .toolbar-content {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 1rem;
   }
-  
-  /* ================================
-     Logo Styling
-     ================================ */
-  .logo img {
-    @apply h-8;
+
+  .nav-items {
+    display: none;
   }
-  
-  /* ================================
-     Toolbar Buttons (Desktop)
-     ================================ */
-  .toolbar-buttons {
-    @apply hidden md:flex space-x-4;
+
+  .logo-title {
+    flex-grow: 0;
   }
-  
-  .toolbar-buttons .cta-button {
-    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition duration-300;
-  }
-  
-  /* ================================
-     Dark Mode/Light Mode Toggle (Desktop)
-     ================================ */
-  .theme-switcher-container {
-    @apply hidden md:flex;
-  }
-  
-  .theme-switcher-container button {
-    @apply p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 focus:outline-none;
-  }
-  
-  /* ================================
-     Hamburger Menu Button (Mobile)
-     ================================ */
-  .hamburger-button {
-    @apply md:hidden flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300 focus:outline-none;
-  }
-  
-  /* ================================
-     Mobile Menu
-     ================================ */
-  .mobile-menu {
-    @apply absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-md flex flex-col items-center space-y-4 py-4 md:hidden;
-  }
-  
-  .mobile-menu .cta-button {
-    @apply w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition duration-300;
-  }
-  
-  /* ================================
-     Dark Mode Styling
-     ================================ */
-  /* Assuming you have defined --color-primary and --color-primary-dark in your Tailwind config or CSS variables */
-  :root {
-    --color-primary: #FF5722;
-    --color-primary-dark: #E64A19;
-  }
-  
-  .dark {
-    /* You can add any additional dark mode styles here if necessary */
-  }
-  
-  /* ================================
-     Responsive Adjustments
-     ================================ */
-  @media (max-width: 768px) {
-    /* Ensure the toolbar does not cause horizontal overflow on small screens */
-    .toolbar {
-      @apply px-4 py-3;
-    }
-  
-    .toolbar-buttons {
-      @apply hidden;
-    }
-  
-    .theme-switcher-container {
-      @apply hidden;
-    }
-  
-    .hamburger-button {
-      @apply block;
-    }
-  
-    /* Mobile menu animations (optional) */
-    .mobile-menu {
-      @apply transition-all duration-300 ease-in-out;
-    }
-  }
+}

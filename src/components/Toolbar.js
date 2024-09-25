@@ -1,47 +1,55 @@
 // src/components/Toolbar.js
-import React, { useState } from 'react';
-import ThemeSwitcher from './ThemeSwitcher';
-import { FaBars, FaTimes } from 'react-icons/fa';
+
+import React, { useState, useEffect } from 'react';
 import './Toolbar.css';
+import ThemeSwitcher from './ThemeSwitcher';
 
-const Toolbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Toolbar = ({ isDarkMode, toggleTheme }) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [opacity, setOpacity] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+
+      // Logarithmic ease-in transition
+      const heroHeight = 500;
+      const newOpacity = Math.log(1 + (position / heroHeight) * (Math.E - 1)) / Math.log(Math.E);
+      setOpacity(Math.min(newOpacity, 1));
+    };
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const showTitle = windowWidth > 768;
 
   return (
-    <div className="toolbar fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
-      <div className="logo">
-        <img src="/images/RepoPromptLogoFull.png" alt="Repo Prompt Logo" className="h-8" />
-      </div>
-      <div className="toolbar-buttons hidden md:flex space-x-4">
-        <button className="cta-button">Home</button>
-        <button className="cta-button">Features</button>
-        <button className="cta-button">Screenshots</button>
-        <button className="cta-button">Reviews</button>
-        {/* Add more buttons as needed */}
-      </div>
-      <div className="hidden md:flex">
-        <ThemeSwitcher />
-      </div>
-      <div className="md:hidden">
-        <button onClick={toggleMobileMenu} className="focus:outline-none">
-          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </div>
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="mobile-menu absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-md flex flex-col items-center space-y-4 py-4 md:hidden">
-          <button className="cta-button">Home</button>
-          <button className="cta-button">Features</button>
-          <button className="cta-button">Screenshots</button>
-          <button className="cta-button">Reviews</button>
-          <ThemeSwitcher />
+    <nav className={`toolbar ${isDarkMode ? 'dark' : ''}`} style={{ backgroundColor: `rgba(${isDarkMode ? '18, 18, 18' : '255, 255, 255'}, ${opacity})` }}>
+      <div className="toolbar-content">
+        <div className="logo-title" style={{ opacity }}>
+          <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="logo" />
+          {showTitle && <h1 className="title">Repo Prompt</h1>}
         </div>
-      )}
-    </div>
+        <ul className="nav-items">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+        <ThemeSwitcher isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      </div>
+    </nav>
   );
 };
 
