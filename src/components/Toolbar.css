@@ -66,11 +66,13 @@
   color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: border-bottom 0.2s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-items li a:hover {
-  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-text);
 }
 
 .theme-and-hamburger {
@@ -104,11 +106,13 @@
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: border-bottom 0.2s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
 .drawer-nav-items a:hover {
-  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-text);
 }
 
 .drawer-theme-switcher {
@@ -157,5 +161,5 @@ body.dark .hamburger-button {
 
 body.dark .nav-items li a:hover,
 body.dark .drawer-nav-items a:hover {
-  color: var(--color-primary);
+  border-bottom-color: var(--color-text);
 }
