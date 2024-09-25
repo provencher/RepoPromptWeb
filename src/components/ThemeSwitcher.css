@@ -1,22 +1,18 @@
+/* src/components/ThemeSwitcher.css */
+
 .theme-switcher {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .theme-switcher.light {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .theme-switcher.dark {
-    background-color: rgba(0, 0, 0, 0.2);
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.5rem; /* Icon size */
+    padding: 0.5rem; /* Padding around the icon */
+    margin-left: 1rem; /* Spacing from other elements */
+    border-radius: 50%; /* Circular button (optional) */
+    transition: filter 0.3s ease; /* Smooth transition for filter */
+    filter: grayscale(100%); /* Grayscale by default */
+    color: var(--color-text, #3D2B00); /* Default icon color */
   }
   
   .theme-switcher:hover {
-    background-color: rgba(128, 128, 128, 0.3);
+    filter: grayscale(0%); /* Remove grayscale on hover to show colors */
   }

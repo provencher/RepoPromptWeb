@@ -1,10 +1,12 @@
+/* src/components/Toolbar.css */
+
 .toolbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.1s ease; /* Changed color transition to 0.1s */
 }
 
 .toolbar-content {
@@ -49,6 +51,7 @@
   color: inherit;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.1s ease; /* Ensure link color transitions are also fast */
 }
 
 .toolbar.dark {

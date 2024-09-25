@@ -36,7 +36,10 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
   const showTitle = windowWidth > 768;
 
   return (
-    <nav className={`toolbar ${isDarkMode ? 'dark' : ''}`} style={{ backgroundColor: `rgba(${isDarkMode ? '18, 18, 18' : '255, 255, 255'}, ${opacity})` }}>
+    <nav
+      className={`toolbar ${isDarkMode ? 'dark' : ''}`}
+      style={{ backgroundColor: `rgba(${isDarkMode ? '18, 18, 18' : '255, 255, 255'}, ${opacity})` }}
+    >
       <div className="toolbar-content">
         <div className="logo-title" style={{ opacity }}>
           <img src="/images/RepoPromptLogo_NoBG.png" alt="Repo Prompt Logo" className="logo" />
