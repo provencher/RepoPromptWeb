@@ -1,11 +1,11 @@
 // src/App.js
 
-
 import React, { useRef, useState, useEffect } from 'react';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
+import Demo from './components/Demo'; // Import Demo component
 import Footer from './components/Footer';
 import './App.css';
 
@@ -39,14 +39,15 @@ function App() {
 
   const handleFeatureClick = (index) => {
     if (screenshotsRef.current) {
-      screenshotsRef.current.goTo(index);
+      screenshotsRef.current.goTo(index, true);
     }
   };
 
   return (
     <div className="App">
-<Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
+      <Demo /> {/* Moved Demo component above Features */}
       <Features onFeatureClick={handleFeatureClick} />
       <Screenshots ref={screenshotsRef} isDarkMode={isDarkMode} />
       <Footer />
