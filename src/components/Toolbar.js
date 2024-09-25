@@ -24,6 +24,8 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
   const showDrawer = () => setIsDrawerVisible(true);
   const onCloseDrawer = () => setIsDrawerVisible(false);
 
+  const testflightUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc6_MPoiCtlJ8vdCZ_w6Mg2yC7CI7RtlMNinG82nbM14dJ9Dg/viewform";
+
   return (
     <>
       <nav className={`toolbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -44,8 +46,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
           <div className="nav-items-container">
             <ul className="nav-items">
               <li><a href="#features">Features</a></li>
-              <li><a href="#screenshots">Screenshots</a></li>
-              <li><a href="#download">Download</a></li>
+              <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer">Join Testflight</a></li>
             </ul>
           </div>
 
@@ -62,8 +63,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
       >
         <ul className="drawer-nav-items">
           <li><a href="#features" onClick={onCloseDrawer}>Features</a></li>
-          <li><a href="#screenshots" onClick={onCloseDrawer}>Screenshots</a></li>
-          <li><a href="#download" onClick={onCloseDrawer}>Download</a></li>
+          <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Testflight</a></li>
         </ul>
       </Drawer>
     </>
