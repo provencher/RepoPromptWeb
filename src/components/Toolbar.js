@@ -1,5 +1,3 @@
-// src/components/Toolbar.js
-
 import React, { useState, useEffect } from 'react';
 import './Toolbar.css';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -60,11 +58,13 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
           </div>
 
           {/* Navigation Links */}
-          <ul className="nav-items">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#screenshots">Screenshots</a></li>
-            <li><a href="#download">Download</a></li>
-          </ul>
+          <div className="nav-items-container">
+            <ul className="nav-items">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#screenshots">Screenshots</a></li>
+              <li><a href="#download">Download</a></li>
+            </ul>
+          </div>
 
           {/* Theme Switcher and Hamburger Menu */}
           <div className="theme-and-hamburger">
