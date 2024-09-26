@@ -45,7 +45,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
 
           <div className="nav-items-container">
             <ul className="nav-items">
-              <li><a href="#demo">Demo</a></li> {/* Moved Demo link to top */}
+              <li><a href="#demo">Demo</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer">Join Testflight</a></li>
             </ul>
@@ -63,7 +63,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
         bodyStyle={{ padding: '1rem' }}
       >
         <ul className="drawer-nav-items">
-          <li><a href="#demo" onClick={onCloseDrawer}>Demo</a></li> {/* Ensure Demo link is present */}
+          <li><a href="#demo" onClick={onCloseDrawer}>Demo</a></li>
           <li><a href="#features" onClick={onCloseDrawer}>Features</a></li>
           <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Testflight</a></li>
         </ul>
