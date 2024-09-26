@@ -7,13 +7,15 @@ function Demo() {
   return (
     <section id="demo" className="demo">
       <div className="demo-content">
-        <video
-          src="/videos/DarkModeSiteEdit.mp4"
-          autoPlay
-          loop
-          muted
-          className="demo-video"
-        />
+      <video
+        src="/videos/DarkModeSiteEdit.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        loading="lazy"
+        className="demo-video"
+      />
       </div>
     </section>
   );
