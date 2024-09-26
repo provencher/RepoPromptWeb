@@ -14,6 +14,8 @@
     width: 100%;
     padding: 2rem 0;
     position: relative;
+    /* Add scroll margin to account for the fixed toolbar */
+    scroll-margin-top: 80px;
   }
   
   .feature-row {
