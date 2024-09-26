@@ -57,7 +57,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
 
       <Drawer
         title="Menu"
-        placement="right"
+        placement="left"
         onClose={onCloseDrawer}
         open={isDrawerVisible}
         bodyStyle={{ padding: '1rem' }}
