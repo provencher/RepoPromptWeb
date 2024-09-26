@@ -5,7 +5,7 @@ import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
-import Demo from './components/Demo'; // Import Demo component
+import Demo from './components/Demo';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -13,28 +13,28 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const screenshotsRef = useRef(null);
 
-  // On component mount, check localStorage for theme preference
   useEffect(() => {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('isDarkMode');
-    if (savedTheme === 'true') {
-      setIsDarkMode(true);
-      document.body.classList.add('dark');
+    
+    if (savedTheme !== null) {
+      setIsDarkMode(savedTheme === 'true');
+    } else {
+      setIsDarkMode(prefersDarkMode);
     }
   }, []);
 
-  // Function to toggle theme
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+    localStorage.setItem('isDarkMode', isDarkMode);
+  }, [isDarkMode]);
+
   const toggleTheme = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      if (newMode) {
-        document.body.classList.add('dark');
-        localStorage.setItem('isDarkMode', 'true');
-      } else {
-        document.body.classList.remove('dark');
-        localStorage.setItem('isDarkMode', 'false');
-      }
-      return newMode;
-    });
+    setIsDarkMode(prevMode => !prevMode);
   };
 
   const handleFeatureClick = (index) => {
@@ -47,7 +47,7 @@ function App() {
     <div className="App">
       <Toolbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
-      <Demo /> {/* Moved Demo component above Features */}
+      <Demo />
       <Features onFeatureClick={handleFeatureClick} />
       <Screenshots ref={screenshotsRef} isDarkMode={isDarkMode} />
       <Footer />
