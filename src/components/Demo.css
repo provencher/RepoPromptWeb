@@ -1,44 +1,44 @@
 /* src/components/Demo.css */
 
 .demo {
-    padding: 2rem 0;
-    background-color: var(--color-background);
-    color: var(--color-text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .demo-content {
-    max-width: 800px;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* Removed .demo h2 styles */
-  
-  .demo-video {
-    width: 100%;
-    max-width: 800px;
-    border: 2px solid var(--color-accent);
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .demo-video:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-lg);
-  }
-  
-  /* Dark mode styles */
-  body.dark .demo {
-    background-color: var(--color-background);
-    color: var(--color-text);
-  }
-  
-  body.dark .demo-video {
-    border-color: var(--color-accent);
-  }
+  padding: 2rem 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-margin-top: 80px;
+}
+
+.demo-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.demo-video {
+  width: 100% !important;
+  height: auto !important;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.demo-video:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Dark mode styles */
+body.dark .demo {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+body.dark .demo-video {
+  border-color: var(--color-accent);
+}
