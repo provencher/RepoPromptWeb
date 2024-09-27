@@ -1,5 +1,4 @@
 /* src/components/Demo.css */
-
 .demo {
   padding: 2rem 0;
   background-color: var(--color-background);
@@ -18,9 +17,9 @@
   padding: 1rem;
 }
 
-.demo-video {
-  width: 100% !important;
-  height: auto !important;
+.player-wrapper {
+  position: relative;
+  padding-top: 51.5625%; /* (1980 / 3840) * 100% */
   border: 2px solid var(--color-accent);
   border-radius: 8px;
   box-shadow: var(--shadow-md);
@@ -28,9 +27,17 @@
   overflow: hidden;
 }
 
-.demo-video:hover {
+.player-wrapper:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Dark mode styles */
@@ -39,6 +46,6 @@ body.dark .demo {
   color: var(--color-text);
 }
 
-body.dark .demo-video {
+body.dark .player-wrapper {
   border-color: var(--color-accent);
 }
