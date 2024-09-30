@@ -57,27 +57,57 @@
     text-align: center;
   }
   
+  /* ================================
+     Button Group Styles
+     ================================ */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* ================================
+     Join Testflight & Discord Button Styles
+     ================================ */
   .cta-button,
-  .testflight-button {
+  .testflight-button,
+  .discord-button {
     display: inline-block;
     background-color: transparent;
     color: var(--color-text);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
-    border: 2px solid var(--color-text); /* Changed to match text color */
+    border: 2px solid var(--color-text); /* Matches text color */
     border-radius: 12px;
     font-weight: bold;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
   }
   
+  .discord-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .discord-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  /* Hover Effects */
   .cta-button:hover,
-  .testflight-button:hover {
+  .testflight-button:hover,
+  .discord-button:hover {
     background-color: var(--color-text);
     color: var(--color-primary);
     border-color: var(--color-text);
   }
   
-  /* Dark theme styles */
+  /* ================================
+     Dark Theme Styles
+     ================================ */
   body.dark .hero {
     background-color: var(--color-primary);
     color: var(--color-text);
@@ -96,18 +126,22 @@
   }
   
   body.dark .cta-button,
-  body.dark .testflight-button {
+  body.dark .testflight-button,
+  body.dark .discord-button {
     color: var(--color-text);
     border-color: var(--color-text);
   }
   
   body.dark .cta-button:hover,
-  body.dark .testflight-button:hover {
+  body.dark .testflight-button:hover,
+  body.dark .discord-button:hover {
     background-color: var(--color-text);
     color: var(--color-primary);
   }
   
-  /* Responsive adjustments */
+  /* ================================
+     Responsive Adjustments
+     ================================ */
   @media (max-width: 768px) {
     .hero h1 {
       font-size: 3rem;
