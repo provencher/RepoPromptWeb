@@ -1,5 +1,3 @@
-// src/components/Toolbar.js
-
 import React, { useState, useEffect } from 'react';
 import './Toolbar.css';
 import ThemeSwitcher from './ThemeSwitcher';
@@ -24,7 +22,8 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
   const showDrawer = () => setIsDrawerVisible(true);
   const onCloseDrawer = () => setIsDrawerVisible(false);
 
-  const testflightUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc6_MPoiCtlJ8vdCZ_w6Mg2yC7CI7RtlMNinG82nbM14dJ9Dg/viewform";
+  const testflightUrl = "https://testflight.apple.com/join/nVjVGWNe";
+  const discordInviteUrl = "https://discord.gg/NtbFDAJPGM";
 
   return (
     <>
@@ -48,6 +47,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
               <li><a href="#demo">Demo</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer">Join Testflight</a></li>
+              <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join Discord</a></li>
             </ul>
           </div>
 
@@ -66,6 +66,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
           <li><a href="#demo" onClick={onCloseDrawer}>Demo</a></li>
           <li><a href="#features" onClick={onCloseDrawer}>Features</a></li>
           <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Testflight</a></li>
+          <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Discord</a></li>
         </ul>
       </Drawer>
     </>
