@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useRef, useState, useEffect } from 'react';
 import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
@@ -7,6 +5,8 @@ import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import Demo from './components/Demo';
 import Footer from './components/Footer';
+import Blog from './components/Blog'; // Import the Blog component
+
 import './App.css';
 
 function App() {
@@ -50,6 +50,7 @@ function App() {
       <Demo />
       <Features onFeatureClick={handleFeatureClick} />
       <Screenshots ref={screenshotsRef} isDarkMode={isDarkMode} />
+      <Blog /> {/* Add the Blog component */}
       <Footer />
     </div>
   );

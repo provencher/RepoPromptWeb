@@ -46,6 +46,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
             <ul className="nav-items">
               <li><a href="#demo">Demo</a></li>
               <li><a href="#features">Features</a></li>
+              <li><a href="#blog">Blog</a></li>
               <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer">Join Testflight</a></li>
               <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join Discord</a></li>
             </ul>
@@ -65,6 +66,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
         <ul className="drawer-nav-items">
           <li><a href="#demo" onClick={onCloseDrawer}>Demo</a></li>
           <li><a href="#features" onClick={onCloseDrawer}>Features</a></li>
+          <li><a href="#blog" onClick={onCloseDrawer}>Blog</a></li>
           <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Testflight</a></li>
           <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Discord</a></li>
         </ul>
