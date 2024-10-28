@@ -19,7 +19,7 @@
 
 .player-wrapper {
   position: relative;
-  padding-top: 51.5625%; /* (1980 / 3840) * 100% */
+  padding-top: 75%; /* 4:3 aspect ratio */
   border: 2px solid var(--color-accent);
   border-radius: 8px;
   box-shadow: var(--shadow-md);

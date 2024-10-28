@@ -9,7 +9,7 @@ function Demo() {
       <div className="demo-content">
         <div className="player-wrapper">
           <ReactPlayer
-            url="https://youtu.be/ib6AVKIiTRU?si=DIv8dH6pddfVFGf5"
+            url="https://youtu.be/1ej5_g6HWi4?si=NNRQ2gaxZDZi_dzX"
             playing={true}
             loop={true}
             muted={true}
