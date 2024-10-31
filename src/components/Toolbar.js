@@ -48,6 +48,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
               <li><a href="#features">Features</a></li>
               <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer">Join Testflight</a></li>
               <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join Discord</a></li>
+              <li><a href="https://ko-fi.com/repoprompt" target="_blank" rel="noopener noreferrer">Donate</a></li>
             </ul>
           </div>
 
