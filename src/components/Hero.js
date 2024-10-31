@@ -30,6 +30,15 @@ function Hero() {
             <img src="/images/icon_clyde_blurple_RGB.svg" alt="Discord Logo" className="discord-logo" />
             Join Discord
           </a>
+          <a
+            href="https://ko-fi.com/repoprompt"
+            className="cta-button donate-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/images/kofi_symbol.png" alt="Ko-fi Logo" className="kofi-logo" />
+            Donate
+          </a>
         </div>
       </div>
     </section>

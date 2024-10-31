@@ -138,6 +138,40 @@
     background-color: var(--color-text);
     color: var(--color-primary);
   }
+
+/* Donate button styles */
+.donate-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+}
+
+.donate-button:hover {
+  background-color: var(--color-text);
+  color: var(--color-primary);
+  border-color: var(--color-text);
+}
+
+.kofi-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  filter: none; /* Remove the filter */
+}
+
+body.dark .donate-button {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+body.dark .donate-button:hover {
+  background-color: var(--color-text);
+  color: var(--color-primary);
+}
+
+/* No need for different filter in dark mode */
   
   /* ================================
      Responsive Adjustments
