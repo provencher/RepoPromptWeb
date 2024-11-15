@@ -85,25 +85,6 @@ The website supports both light and dark themes, with automatic system preferenc
 
 2. The optimized files will be in the `build` directory
 
-## Deployment
-
-The static website can be deployed to various platforms:
-
-### GitHub Pages
-1. Update `package.json` with your repository name
-2. Run `npm run build`
-3. Deploy using GitHub Pages settings
-
-### Netlify
-1. Connect your repository to Netlify
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-
-### Vercel
-1. Import your repository to Vercel
-2. Vercel will automatically detect React configuration
-3. Deploy with default settings
-
 ## Contributing
 
 1. Fork the repository
