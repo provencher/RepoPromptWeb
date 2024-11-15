@@ -117,4 +117,4 @@ This project uses a dual license:
 - Code is licensed under the Apache 2.0 License
 - Brand assets, logos, and marketing materials are All Rights Reserved
 
-See [LICENSE.md](LICENSE)
+See [LICENSE](LICENSE)
