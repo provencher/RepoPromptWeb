@@ -113,4 +113,8 @@ The static website can be deployed to various platforms:
 
 ## License
 
-All rights reserved.
+This project uses a dual license:
+- Code is licensed under the Apache 2.0 License
+- Brand assets, logos, and marketing materials are All Rights Reserved
+
+See [LICENSE.md](LICENSE)
