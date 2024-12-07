@@ -72,7 +72,8 @@
      ================================ */
   .cta-button,
   .testflight-button,
-  .discord-button {
+  .discord-button,
+  .waitlist-button {
     display: inline-block;
     background-color: transparent;
     color: var(--color-text);
@@ -99,7 +100,8 @@
   /* Hover Effects */
   .cta-button:hover,
   .testflight-button:hover,
-  .discord-button:hover {
+  .discord-button:hover,
+  .waitlist-button:hover {
     background-color: var(--color-text);
     color: var(--color-primary);
     border-color: var(--color-text);
@@ -127,14 +129,16 @@
   
   body.dark .cta-button,
   body.dark .testflight-button,
-  body.dark .discord-button {
+  body.dark .discord-button,
+  body.dark .waitlist-button {
     color: var(--color-text);
     border-color: var(--color-text);
   }
   
   body.dark .cta-button:hover,
   body.dark .testflight-button:hover,
-  body.dark .discord-button:hover {
+  body.dark .discord-button:hover,
+  body.dark .waitlist-button:hover {
     background-color: var(--color-text);
     color: var(--color-primary);
   }

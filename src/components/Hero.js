@@ -22,6 +22,14 @@ function Hero() {
             Join Testflight
           </a>
           <a
+            href="https://forms.gle/TGx1ZuT3oqng7EuKA"
+            className="cta-button waitlist-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Windows/Linux Waitlist
+          </a>
+          <a
             href="https://discord.gg/NtbFDAJPGM"
             className="cta-button discord-button"
             target="_blank"
