@@ -50,6 +50,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
               <li><a href="https://forms.gle/TGx1ZuT3oqng7EuKA" target="_blank" rel="noopener noreferrer">Windows/Linux Waitlist</a></li>
               <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer">Join Discord</a></li>
               <li><a href="https://ko-fi.com/repoprompt" target="_blank" rel="noopener noreferrer">Donate</a></li>
+              <li><a href="mailto:contact@repoprompt.com">Contact</a></li>
             </ul>
           </div>
 
@@ -70,6 +71,7 @@ const Toolbar = ({ isDarkMode, toggleTheme }) => {
           <li><a href={testflightUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Testflight</a></li>
           <li><a href="https://forms.gle/TGx1ZuT3oqng7EuKA" target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Windows/Linux Waitlist</a></li>
           <li><a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" onClick={onCloseDrawer}>Join Discord</a></li>
+          <li><a href="mailto:contact@repoprompt.com" onClick={onCloseDrawer}>Contact</a></li>
         </ul>
       </Drawer>
     </>
